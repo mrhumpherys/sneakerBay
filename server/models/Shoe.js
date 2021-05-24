@@ -10,7 +10,7 @@ const shoeSchema = new Schema(
             maxlength: 200
         },
         size: {
-            type: Number,
+            type: String,
             required: 'You need a size for your sneakers!'
         },
         description: {

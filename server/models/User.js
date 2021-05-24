@@ -26,7 +26,7 @@ const userSchema = new Schema(
                 ref: 'Shoe'
             }
         ],
-        toBuy: [
+        bought: [
             {
                 type: Schema.Types.ObjectId,
                 ref: 'Shoe'
@@ -60,7 +60,7 @@ userSchema.virtual('sellCount').get(function() {
 });
 
 userSchema.virtual('buyCount').get(function() {
-    return this.toBuy.length;
+    return this.bought.length;
 });
 
 const User = model('User', userSchema);

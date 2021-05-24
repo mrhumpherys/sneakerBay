@@ -6,13 +6,13 @@ const typeDefs = gql`
         username: String
         email: String
         toSell: [Shoe]
-        toBuy: [Shoe]
+        bought: [Shoe]
     }
 
     type Shoe {
         _id: ID
         name: String
-        size: Number
+        size: String
         description: String
         price: String
         sold: Boolean
@@ -27,9 +27,17 @@ const typeDefs = gql`
 
     input shoeInput {
         name: String
-        size: Number
+        size: String
         description: String
         price: String
+    }
+
+    input shoeBuyInput {
+        name: String
+        size: String
+        description: String
+        price: String
+        username: String
     }
 
     type Query {
@@ -43,9 +51,9 @@ const typeDefs = gql`
     type Mutation {
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
-        addShoe(input: shoeInput!): User
+        addShoe(input: shoeInput!): Shoe
         removeShoe(_id: ID!): User
-        buyShoe(input: shoeInput!): User
+        buyShoe(_id: ID!): User
         updateSold(_id: ID!): Shoe
     }
 `;
