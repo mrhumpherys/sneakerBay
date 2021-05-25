@@ -1,0 +1,155 @@
+:root {
+/* CSS HEX */
+--pullman-brown-ups-brown: #5c3f05ff;
+--black: #121212;
+--marigold: #eba721;
+--shadow: #8f826aff;
+--field-drab: #6e5219ff;
+--background: #f1f1f1;
+}
+
+html, body {
+    background: var(--background);
+    scroll-behavior: smooth;
+    color: #242424;
+    font-family: 'Source Sans Pro', sans-serif;
+    height: 100%;
+}
+h1, h2, h3, h4, h5, h6, .btn {
+    font-family: 'Oswald', sans-serif;
+}
+h1 {
+    font-size: 6rem;
+}
+h2 {
+    font-size: 2.5rem;
+}
+h4 {
+    font-size: 1rem;
+}
+nav {
+    border-top: 5px solid var(--marigold);
+}
+main {
+ padding-bottom: 100px;
+}
+.hero {
+    min-height: 500px;
+    background: #d2d2d2 url('../img/hero-bg-2.jpg') no-repeat center right;
+    background-size: cover;
+    background-position:center
+
+}
+.intro {
+    color: #fff;
+}
+.marketing-bar {
+    padding: 30px 0;
+    background: var(--marigold);
+}
+.market-box {
+    border: 1px solid #fff;
+    padding: 20px;
+}
+.market-box i {
+    font-size: 1.75rem;
+}
+.title-area {
+    padding: 100px 0 30px 0;
+    background: #fff;
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+    text-transform: uppercase;
+}
+
+.product-container {
+    background: #fff;
+}
+
+.product-btns .btn{ 
+    height: 50px;
+    width: 50px;
+    margin: 0 5px;
+    background: var(--background);
+}
+h3.product-name {
+    font-size: 1.5rem;
+}
+
+.profile-sidebar {
+    background: #fff;
+    padding-bottom: 25px;
+}
+.profile-sidebar ul {
+    border-top:1px solid #e7e7e7;
+}
+.profile-sidebar li {
+    padding: 10px 20px;
+    border-bottom: 1px solid #e7e7e7;
+}
+li.section-header {
+    background: var(--black);
+    color: #fff;
+}
+.profile-header {
+    padding: 10px;
+    background: #fff;
+}
+
+.btn-primary {
+    background: var(--black);
+    border-color: var(--black);
+    
+}
+button.btn:hover, a.btn:hover {
+    background: var(--marigold);
+    color: var(--black);
+}
+.user-photo {
+    padding: 20px 0;
+}
+.img-round {
+    border-radius: 50%;
+    overflow: hidden;
+}
+h2 .subheader {
+    display: block;
+    font-size: 50%;
+    color: #666;
+}
+.break {
+    display: block;
+}
+.add-shoe-form {
+    background: #fff;
+    padding: 20px;
+}
+#login-area {
+    padding-top: 100px;
+}
+
+.form-signin {
+    padding-top: 100px;
+}
+.form-floating {
+    margin-bottom: 10px;
+}
+
+.watched::before {
+    position: absolute;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f004";
+    margin-left: 10px;
+    margin-top: 10px;
+    color: var(--marigold);
+}
+
+@media screen and (max-width: 991px) {
+    a.navbar-brand img {
+        width: 200px;
+    }
+}
