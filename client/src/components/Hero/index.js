@@ -3,7 +3,7 @@ import React from 'react';
 function Hero() {
 
 
-    return(
+    return (
         <section className="hero d-flex align-items-center">
             <div className="container">
                 <div className="row d-flex justify-content-center">
