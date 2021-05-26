@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-function SearchResult() {
+function SearchResult({ shoes }) {
 
     return (
 
@@ -164,6 +165,31 @@ function SearchResult() {
                             </div>
                         </div>
                     </div>
+                    {shoes.map(shoe => (
+                        <div class="col-lg-3" key={shoe._id}>
+                            <div class="product-container mb-4">
+                                <div class="product-image">
+                                    <img src="https://via.placeholder.com/600x350" class="img-fluid" />
+                                </div>
+                                <div class="product-detail mt-3 px-4">
+                                    <h3 class="product-name">{shoe.name}</h3>
+                                    <div class="d-flex justify-content-between">
+                                        <span class="size">{shoe.size}</span>
+                                        <span class="size">Seller: {shoe.username}</span>
+                                        <span class="price">{shoe.price}</span>
+                                    </div>
+
+                                </div>
+                                <div class="d-flex justify-content-start px-4 product-btns">
+                                    <div class="btn-group my-4" role="group" aria-label="Basic example">
+                                        <button type="button" class="btn"><i class="fas fa-shopping-bag"></i></button>
+                                        <button type="button" class="btn"><i class="far fa-heart"></i></button>
+                                        <Link to="single-product" class="btn"><i class="fas fa-search"></i></ Link>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>
