@@ -19,6 +19,9 @@ const shoeSchema = new Schema(
             minlength: 1,
             maxlength: 280
         },
+        image:{
+            type: String
+        },
         price: {
             type: String,
             required: 'You must have a price for your sneakers!',
