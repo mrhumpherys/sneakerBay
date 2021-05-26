@@ -33,13 +33,15 @@ function Navbar() {
               id="navbarSupportedContent"
             >
               <ul className="navbar-nav mb-2 mb-lg-0">
-                <li className="nav-item">
+                
                   {Auth.loggedIn() ? (
-                    <>
+                    <><li className="nav-item">
                       <Link className="nav-link" aria-current="/" to="/">
                       <i className="fas fa-home"></i> Home
                       </Link>
-                      <a href="/" onClick={logout}>Logout</a>
+                      </li>
+                      <li className="nav-item"><Link to="/" onClick={logout}>Logout</Link></li>
+                      
                     </>
                   ) : (
                     <>
@@ -52,7 +54,6 @@ function Navbar() {
                     </>
                   )}
 
-                </li>
               </ul>
             </div>
           </div>

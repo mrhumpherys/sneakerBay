@@ -76,7 +76,7 @@ function Login() {
               </div>
               <p className="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
             </form>
-            {error && <div>Login failed</div>}
+            {error && <div className="alert alert-danger">Login failed</div>}
           </div>
         </div>
       </div>

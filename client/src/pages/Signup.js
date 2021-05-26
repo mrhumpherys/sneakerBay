@@ -1,7 +1,7 @@
 // import React from "react";
 import React, { useState } from "react";
 import { useMutation } from "@apollo/react-hooks";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ADD_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
 
@@ -87,10 +87,11 @@ function Signup(props) {
                 Sign Up
               </button>
               <div className="mt-3">
-                <a href="#">Already have an account? Login</a>
+                <Link to="#">Already have an account? Login</Link>
               </div>
               <p className="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
             </form>
+            {error && <div className="alert alert-danger">Stranger Danger! Signup failed</div>}
           </div>
         </div>
       </div>
