@@ -19,7 +19,7 @@ function SingleProduct() {
                         <div className="row">
                             <div className="col-lg-6">
                                 <div className="img-large-container">
-                                    <img src="https://via.placeholder.com/1200x1200" className="img-fluid" />
+                                    <img src="https://via.placeholder.com/1200x1200" className="img-fluid" alt="" />
                                 </div>
                             </div>
                             <div className="col-lg-6">
