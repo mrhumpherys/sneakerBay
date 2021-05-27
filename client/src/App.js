@@ -14,6 +14,7 @@ import Search from "./pages/Search";
 import AddShoe from "./pages/Add-shoe";
 import NoMatch from "./pages/NoMatch";
 import './App.css';
+import Auth from "./utils/auth";
 
 const client = new ApolloClient({
   request: operation => {
@@ -34,16 +35,27 @@ function App() {
       <Router>
         <Navbar />
         <div>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/signup" component={Signup} />
-            <Route exact path="/dashboard" component={Dashboard} />
-            <Route exact path="/single-product/:id" component={SingleProduct} />
-            <Route exact path="/search" component={Search} />
-            <Route exact path="/add-shoe" component={AddShoe} />
-            <Route component={NoMatch} />
-          </Switch>
+          {Auth.loggedIn() ? (
+            <>
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/dashboard" component={Dashboard} />
+                <Route exact path="/single-product" component={SingleProduct} />
+                <Route exact path="/search" component={Search} />
+                <Route exact path="/add-shoe" component={AddShoe} />
+                <Route component={NoMatch} />
+              </Switch>
+            </>
+          ) : (
+            <>
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/signup" component={Signup} />
+                <Route component={NoMatch} />
+              </Switch>
+            </>
+          )}
           <Footer />
         </div>
       </Router>
