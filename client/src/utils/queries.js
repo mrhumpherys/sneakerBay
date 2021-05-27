@@ -41,6 +41,9 @@ export const QUERY_ME = gql`
       username
       createdAt
     }
+    sellCount
+    buyCount
+    createdAt
   }
 }
 `;

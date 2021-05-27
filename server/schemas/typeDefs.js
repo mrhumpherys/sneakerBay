@@ -7,6 +7,9 @@ const typeDefs = gql`
         email: String
         toSell: [Shoe]
         bought: [Shoe]
+        sellCount: Int
+        buyCount: Int
+        createdAt: String
     }
 
     type Shoe {
