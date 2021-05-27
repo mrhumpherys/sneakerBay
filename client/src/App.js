@@ -39,7 +39,7 @@ function App() {
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/dashboard" component={Dashboard} />
-            <Route exact path="/single-product" component={SingleProduct} />
+            <Route exact path="/single-product/:id" component={SingleProduct} />
             <Route exact path="/search" component={Search} />
             <Route exact path="/add-shoe" component={AddShoe} />
             <Route component={NoMatch} />

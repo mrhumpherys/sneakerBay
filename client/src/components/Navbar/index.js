@@ -29,7 +29,7 @@ function Navbar() {
             <Link className="nav-link" aria-current="page" to="/dashboard"><i className="fas fa-tachometer-alt"></i> Dashboard</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" aria-current="page" to="/dashboard"><i className="fas fa-dollar-sign"></i> Sell Shoe</Link>
+            <Link className="nav-link" aria-current="page" to="/add-shoe"><i className="fas fa-dollar-sign"></i> Sell Shoe</Link>
           </li>
         <li className="nav-item">
           <Link className="nav-link" to="#" onClick={logout}>Logout</Link>

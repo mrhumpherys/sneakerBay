@@ -184,7 +184,7 @@ function SearchResult({ shoes }) {
                                     <div className="btn-group my-4" role="group" aria-label="Basic example">
                                         <button type="button" className="btn"><i className="fas fa-shopping-bag"></i></button>
                                         <button type="button" className="btn"><i className="far fa-heart"></i></button>
-                                        <Link to="single-product" className="btn"><i className="fas fa-search"></i></ Link>
+                                        <Link to={`/single-product/${shoe._id}`} className="btn"><i className="fas fa-search"></i></ Link>
                                     </div>
                                 </div>
                             </div>

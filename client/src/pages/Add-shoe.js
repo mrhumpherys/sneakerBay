@@ -2,11 +2,32 @@ import React, { useState } from "react";
 import { Route } from "react-router-dom";
 import { useMutation } from '@apollo/react-hooks';
 import { ADD_SHOE } from '../utils/mutations';
+import { QUERY_SHOES, QUERY_ME } from '../utils/queries';
 
 function AddShoe() {
 
   const [shoeFormData, setShoeFormData] = useState({ name: '', size:'', description: '', price: ''})
-  const [addNewShoe, { error }] = useMutation(ADD_SHOE);
+  const [addNewShoe, { error }] = useMutation(ADD_SHOE, {
+    update(cache, { data: { addNewShoe } }) {
+      try {
+        // could potentially not exist yet, so wrap in a try...catch
+        const { shoes } = cache.readQuery({ query: QUERY_SHOES });
+        cache.writeQuery({
+          query: QUERY_SHOES,
+          data: { shoes: [addNewShoe, ...shoes] }
+        });
+      } catch (e) {
+        console.error(e);
+      }
+  
+      // update me object's cache, appending new thought to the end of the array
+      const { me } = cache.readQuery({ query: QUERY_ME });
+      cache.writeQuery({
+        query: QUERY_ME,
+        data: { me: { ...me, toSell: [...me.toSell, addNewShoe] } }
+      });
+    }
+});
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -26,6 +47,7 @@ function AddShoe() {
         });
 
         setShoeFormData({ name: '', size:'', description: '', price: ''});
+        window.location('/dashboard');
         
     } catch (e) {
         console.log(e);
