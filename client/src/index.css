@@ -30,6 +30,26 @@
   nav {
       border-top: 5px solid var(--marigold);
   }
+  .navbar {
+      padding-top:0;
+      padding-bottom:0;
+  }
+  .navbar li.nav-item {
+    border-left: 1px solid #e7e7e7;
+    transform: skewX(-15deg);
+    transition: all ease .3s;
+  }
+  .navbar li.nav-item:hover {
+    background: var(--marigold);
+}
+  .navbar li.nav-item:last-child {
+      border-right: 1px solid #e7e7e7;
+  }
+  .navbar-nav .nav-link {
+      padding: 1rem 1.5rem !important;
+      transform: skewX(15deg);
+  }
+
   main {
    padding-bottom: 100px;
   }
@@ -163,8 +183,35 @@
       a.navbar-brand img {
           width: 200px;
       }
+      .navbar {
+          padding-top: .5rem;
+          padding-bottom: .5rem;
+      }
       .market-box {
           margin-bottom: 10px;
       }
+      .navbar li.nav-item {
+        transform: skewX(0deg);
+      }
+      .navbar-nav .nav-link {
+          transform: skewX(0deg);
+      }
+      .container.nav-container {
+          width: 100%;
+          padding-right: var(--bs-gutter-x,.75rem);
+            padding-left: var(--bs-gutter-x,.75rem);
+            margin-right: auto;
+            margin-left: auto;
+            max-width: 100%;
+      }
+      .navbar li.nav-item {
+          border-left: none;
   }
-  
+  .navbar li.nav-item:last-child {
+    border-right: none;
+}
+
+.navbar-nav .nav-link {
+    padding: 1rem .5rem !important;
+}
+  }
