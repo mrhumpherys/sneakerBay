@@ -39,7 +39,7 @@ const Dashboard = () => {
                                         <h3 className="text-center pb-2">{userData.username}</h3>
                                         <ul className="list-unstyled">
                                             <li className="d-flex justify-content-between">
-                                                <span>Member since</span><span>{userData.createdAt}</span>
+                                                <span>Member since </span><span> {userData.createdAt}</span>
                                             </li>
                                             <li className="d-flex justify-content-between">
                                                 <span># of Sales</span><span>{userData.sellCount}</span>
