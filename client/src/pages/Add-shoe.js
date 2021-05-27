@@ -1,7 +1,37 @@
-import React from "react";
-import { Route, Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Route } from "react-router-dom";
+import { useMutation } from '@apollo/react-hooks';
+import { ADD_SHOE } from '../utils/mutations';
 
 function AddShoe() {
+
+  const [shoeFormData, setShoeFormData] = useState({ name: '', size:'', description: '', price: ''})
+  const [addNewShoe, { error }] = useMutation(ADD_SHOE);
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setShoeFormData({
+      ...shoeFormData,
+      [name]: value,
+    });
+  };
+
+  const handleFormSubmit = async event => {
+    event.preventDefault();
+
+    try {
+        await addNewShoe({
+            variables: { input : shoeFormData }
+        });
+
+        setShoeFormData({ name: '', size:'', description: '', price: ''});
+        
+    } catch (e) {
+        console.log(e);
+    }
+  };
+
   return (
     <Route>
       <main>
@@ -17,12 +47,13 @@ function AddShoe() {
           <div className="container">
             <div className="row d-flex justify-content-center">
               <div className="col-lg-9">
-                <form className="row add-shoe-form">
+                <form className="row add-shoe-form" onSubmit={handleFormSubmit}>
                   <div className="col-lg-5">
                     <div className="img-area">
                       <img
                         src="https://via.placeholder.com/800x640"
                         className="img-fluid"
+                        alt="placeholder"
                       />
                     </div>
                     <div className="my-3">
@@ -45,10 +76,13 @@ function AddShoe() {
                         Shoe Title
                       </label>
                       <input
-                        type="email"
+                        type="name"
+                        name="name"
                         className="form-control"
                         id="exampleInputEmail1"
                         aria-describedby="emailHelp"
+                        value={shoeFormData.name}
+                        onChange={handleChange}
                       />
                     </div>
                     <div className="mb-3">
@@ -56,15 +90,50 @@ function AddShoe() {
                         htmlFor="exampleInputPassword1"
                         className="form-label"
                       >
-                        Brand
+                        Description
                       </label>
                       <input
-                        type="password"
+                        type="text"
                         className="form-control"
                         id="exampleInputPassword1"
+                        name="description"
+                        value={shoeFormData.description}
+                        onChange={handleChange}
                       />
                     </div>
                     <div className="mb-3">
+                      <label
+                        htmlFor="exampleInputPassword1"
+                        className="form-label"
+                      >
+                        Size
+                      </label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="exampleInputPassword1"
+                        name="size"
+                        value={shoeFormData.size}
+                        onChange={handleChange}
+                      />
+                    </div>
+                    <div className="mb-3">
+                      <label
+                        htmlFor="exampleInputPassword1"
+                        className="form-label"
+                      >
+                        Price
+                      </label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="exampleInputPassword1"
+                        name="price"
+                        value={shoeFormData.price}
+                        onChange={handleChange}
+                      />
+                    </div>
+                    {/* <div className="mb-3">
                       <label
                         htmlFor="exampleInputPassword1"
                         className="form-label"
@@ -174,17 +243,18 @@ function AddShoe() {
                         />
                         <label
                           className="form-check-label"
-                          htmlFor="inlineCheckbox3"
-                        >
+                          htmlFor="inlineCheckbox3" */}
+                        {/* >
                           Blue
                         </label>
-                      </div>
-                    </div>
+                      </div> */}
+                    {/* </div> */}
                     <button type="submit" className="btn btn-primary">
                       Submit
                     </button>
                   </div>
                 </form>
+                {error && <span className="ml-2">Something went wrong...</span>}
               </div>
             </div>
           </div>

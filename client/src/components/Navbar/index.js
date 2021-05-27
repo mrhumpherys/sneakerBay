@@ -23,8 +23,14 @@ function Navbar() {
         {Auth.loggedIn() ? (
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
           <li className="nav-item">
-          <Link className="nav-link" aria-current="page" to="/"><i className="fas fa-home"></i> Home</Link>
-        </li>
+            <Link className="nav-link" aria-current="page" to="/"><i className="fas fa-home"></i> Home</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" aria-current="page" to="/dashboard"><i className="fas fa-tachometer-alt"></i> Dashboard</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" aria-current="page" to="/dashboard"><i className="fas fa-dollar-sign"></i> Sell Shoe</Link>
+          </li>
         <li className="nav-item">
           <Link className="nav-link" to="#" onClick={logout}>Logout</Link>
         </li>

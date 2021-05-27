@@ -3,15 +3,27 @@ import Hero from '../components/Hero/';
 import Bar from '../components/Bar';
 import Searchbar from '../components/Searchbar';
 import SearchResult from '../components/Results';
+import { useQuery } from '@apollo/react-hooks';
+import { QUERY_SHOES } from '../utils/queries';
 
 const Home = () => {
+
+  const { loading, data } = useQuery(QUERY_SHOES);
+    const shoes = data?.shoes || [];
+    console.log("hello");
+
   return (
     <div className="">
   {/* <Navbar /> */}
         <Hero />
         <Bar />
         <Searchbar />
-        <SearchResult />
+        {loading ? (
+          <div>Loading...</div>
+        ) : (
+          <SearchResult shoes={shoes}/>
+        )}
+        
     </div>
   );
 };

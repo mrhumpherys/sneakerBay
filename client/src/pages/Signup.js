@@ -87,7 +87,7 @@ function Signup(props) {
                 Sign Up
               </button>
               <div className="mt-3">
-                <Link to="#">Already have an account? Login</Link>
+                <Link to="/login">Already have an account? Login</Link>
               </div>
               <p className="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
             </form>

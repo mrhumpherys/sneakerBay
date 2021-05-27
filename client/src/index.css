@@ -13,6 +13,7 @@
       color: #242424;
       font-family: 'Source Sans Pro', sans-serif;
       height: 100%;
+      background:  var(--background);
   }
   h1, h2, h3, h4, h5, h6, .btn {
       font-family: 'Oswald', sans-serif;
@@ -150,6 +151,9 @@
   @media screen and (max-width: 991px) {
       a.navbar-brand img {
           width: 200px;
+      }
+      .market-box {
+          margin-bottom: 10px;
       }
   }
   

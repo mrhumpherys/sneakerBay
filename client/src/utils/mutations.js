@@ -42,3 +42,19 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const ADD_SHOE = gql`
+  mutation addShoe($input: shoeInput!) {
+    addShoe(input: $input ) {
+      name
+      username
+      _id
+      size
+      description
+      price
+      sold
+      createdAt
+    }
+  }
+`;
+
