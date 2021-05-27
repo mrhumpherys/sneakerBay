@@ -12,6 +12,7 @@ import Dashboard from "./pages/Dashboard";
 import SingleProduct from "./pages/Single-product";
 import Search from "./pages/Search";
 import AddShoe from "./pages/Add-shoe";
+import NoMatch from "./pages/NoMatch";
 import './App.css';
 
 const client = new ApolloClient({
@@ -41,7 +42,7 @@ function App() {
             <Route exact path="/single-product" component={SingleProduct} />
             <Route exact path="/search" component={Search} />
             <Route exact path="/add-shoe" component={AddShoe} />
-            {/* <Route component={NoMatch} /> */}
+            <Route component={NoMatch} />
           </Switch>
           <Footer />
         </div>
