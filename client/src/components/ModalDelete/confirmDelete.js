@@ -8,7 +8,7 @@ const ConfirmDelete = ({onClose}) => {
     // ==================================== CONFIRM DELETE MODAL START ======================================================
     <div className="container modalBackdrop">
 
-        <div  id="confirm-delete" tabindex="-1"  >
+        <div  id="confirm-delete" tabIndex="-1"  >
         <div className="modal-dialog">
 
             <div className="modal-content modalContainer">
