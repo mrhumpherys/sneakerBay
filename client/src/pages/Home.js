@@ -8,7 +8,9 @@ import { QUERY_SHOES } from '../utils/queries';
 
 const Home = () => {
 
-  const { loading, data } = useQuery(QUERY_SHOES);
+  const { loading, data } = useQuery(QUERY_SHOES, {
+    pollInterval: 500,
+  });
     const shoes = data?.shoes || [];
     console.log("hello");
 

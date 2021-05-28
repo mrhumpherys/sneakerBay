@@ -3,10 +3,13 @@ import { Route, Link } from 'react-router-dom';
 import { useQuery } from '@apollo/react-hooks';
 import { QUERY_ME } from '../utils/queries';
 import SneakerContainer from '../components/SneakerContainer';
+import BoughtSneaker from '../components/BoughtSneaker';
 
 const Dashboard = () => {
 
-    const { loading, data } = useQuery(QUERY_ME);
+    const { loading, data } = useQuery(QUERY_ME, {
+        pollInterval: 500,
+    });
 
     const userData = data?.me || {};
      // if data isn't here yet, say so
@@ -73,10 +76,11 @@ const Dashboard = () => {
                                     
                                 </div>
                                 <div className="row">
-                                    <div className="col-12"><h2>WATCHLIST</h2></div>
+                                    <div className="col-12"><h2>Purchases</h2></div>
                                 </div>
                                 <div className="row">
-                                    <div className="col-lg-4">
+                                    <BoughtSneaker bought={userData.bought} />
+                                    {/* <div className="col-lg-4">
                                         <div className="product-container mb-4 watched">
                                             <div className="product-image">
                                                 <Link to="single-product.html"><img src="https://via.placeholder.com/600x350" className="img-fluid"  alt="" /></Link>
@@ -119,7 +123,7 @@ const Dashboard = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         </div>
