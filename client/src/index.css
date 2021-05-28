@@ -6,235 +6,284 @@
   --shadow: #8f826aff;
   --field-drab: #6e5219ff;
   --background: #f1f1f1;
-  }
-  
-  html, body {
-      scroll-behavior: smooth;
-      color: #242424;
-      font-family: 'Source Sans Pro', sans-serif;
-      height: 100%;
-      background:  #e7e7e7;
-  }
-  h1, h2, h3, h4, h5, h6, .btn {
-      font-family: 'Oswald', sans-serif;
-  }
-  h1 {
-      font-size: 6rem;
-  }
-  h2 {
-      font-size: 2.5rem;
-  }
-  h4 {
-      font-size: 1rem;
-  }
-  nav {
-      border-top: 5px solid var(--marigold);
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  color: #242424;
+  font-family: "Source Sans Pro", sans-serif;
+  height: 100%;
+  background: #e7e7e7;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.btn {
+  font-family: "Oswald", sans-serif;
+}
+h1 {
+  font-size: 6rem;
+}
+h2 {
+  font-size: 2.5rem;
+}
+h4 {
+  font-size: 1rem;
+}
+nav {
+  border-top: 5px solid var(--marigold);
+}
+.navbar {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.navbar li.nav-item {
+  border-left: 1px solid #e7e7e7;
+  transform: skewX(-15deg);
+  transition: all ease 0.3s;
+}
+.navbar li.nav-item:hover {
+  background: var(--marigold);
+}
+.navbar li.nav-item:last-child {
+  border-right: 1px solid #e7e7e7;
+}
+.navbar-nav .nav-link {
+  padding: 1rem 1.5rem !important;
+  transform: skewX(15deg);
+}
+
+main {
+  padding-bottom: 100px;
+}
+.hero {
+  min-height: 500px;
+  background: #d2d2d2 url("./img/hero-bg-2.jpg") no-repeat center right;
+  background-size: cover;
+  background-position: center;
+}
+.intro {
+  color: #fff;
+}
+.marketing-bar {
+  padding: 30px 0;
+  background: var(--marigold);
+}
+.market-box {
+  border: 1px solid #fff;
+  padding: 20px;
+}
+.market-box i {
+  font-size: 1.75rem;
+}
+.title-area {
+  padding: 100px 0 30px 0;
+  background: #fff;
+  border-top: 1px solid #e7e7e7;
+  border-bottom: 1px solid #e7e7e7;
+  text-transform: uppercase;
+}
+
+.product-container {
+  background: #fff;
+}
+
+.product-btns .btn {
+  height: 50px;
+  width: 50px;
+  margin: 0 5px;
+  background: var(--background);
+}
+h3.product-name {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+h3.product-name a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+h3.product-name a:hover {
+  text-decoration: none;
+  color: var(--marigold);
+}
+.product-image {
+  padding: 30px;
+}
+.product-detail a {
+  text-decoration: none;
+  color: var(--black);
+  transition: all ease 0.3s;
+}
+.product-detail a:hover {
+  color: var(--marigold);
+}
+.profile-sidebar {
+  background: #fff;
+  padding-bottom: 25px;
+}
+.profile-sidebar ul {
+  border-top: 1px solid #e7e7e7;
+}
+.profile-sidebar li {
+  padding: 10px 20px;
+  border-bottom: 1px solid #e7e7e7;
+}
+li.section-header {
+  background: var(--black);
+  color: #fff;
+}
+.profile-header {
+  padding: 10px;
+  background: #fff;
+}
+
+.btn-primary {
+  background: var(--black);
+  border-color: var(--black);
+}
+button.btn:hover,
+a.btn:hover {
+  background: var(--marigold);
+  color: var(--black);
+}
+.user-photo {
+  padding: 20px 0;
+}
+.img-round {
+  border-radius: 50%;
+  overflow: hidden;
+}
+h2 .subheader {
+  display: block;
+  font-size: 50%;
+  color: #666;
+}
+.break {
+  display: block;
+}
+.add-shoe-form {
+  background: #fff;
+  padding: 20px;
+}
+#login-area {
+  padding-top: 100px;
+}
+
+.form-signin {
+  padding-top: 100px;
+}
+.form-floating {
+  margin-bottom: 10px;
+}
+.details-container {
+  padding: 30px;
+  background: #fff;
+}
+
+.side-content {
+  background: #fff;
+}
+
+.watched::before {
+  position: absolute;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f004";
+  margin-left: 10px;
+  margin-top: 10px;
+  color: var(--marigold);
+}
+
+/* ============================ Modals START ===================================== */
+/* ======================================================================= */
+.modalBackdrop {
+	background: rgba(0, 0, 0, .65);
+	bottom: 0;
+	left: 0;
+	overflow: auto;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 1;
+}
+
+.modalContainer {
+    box-shadow: 11px 9px 17px var(--marigold);
+	background: rgba(199, 195, 195, 0.898);
+	border-radius: 10px;
+	max-width: 100%;
+	margin: 50px auto;
+	padding: 10px;
+}
+
+.closeModalBtn {
+    border-radius: 50%;
+}
+
+#modal-btn  {
+    width: 100px !important;
+    color: black;
+    background: #e7e7e7;
+}
+
+#modal-btn:hover,
+.closeModalBtn:hover {
+  background: var(--marigold);
+  color: var(--black);
+}
+
+/* ======================================================================= */
+/* ============================ Modals END ===================================== */
+
+@media screen and (max-width: 991px) {
+  a.navbar-brand img {
+    width: 200px;
   }
   .navbar {
-      padding-top:0;
-      padding-bottom:0;
-  }
-  .navbar li.nav-item {
-    border-left: 1px solid #e7e7e7;
-    transform: skewX(-15deg);
-    transition: all ease .3s;
-  }
-  .navbar li.nav-item:hover {
-    background: var(--marigold);
-}
-  .navbar li.nav-item:last-child {
-      border-right: 1px solid #e7e7e7;
-  }
-  .navbar-nav .nav-link {
-      padding: 1rem 1.5rem !important;
-      transform: skewX(15deg);
-  }
-
-  main {
-   padding-bottom: 100px;
-  }
-  .hero {
-      min-height: 500px;
-      background: #d2d2d2 url('./img/hero-bg-2.jpg') no-repeat center right;
-      background-size: cover;
-      background-position:center
-  
-  }
-  .intro {
-      color: #fff;
-  }
-  .marketing-bar {
-      padding: 30px 0;
-      background: var(--marigold);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
   .market-box {
-      border: 1px solid #fff;
-      padding: 20px;
+    margin-bottom: 10px;
   }
-  .market-box i {
-      font-size: 1.75rem;
+  .navbar li.nav-item {
+    transform: skewX(0deg);
   }
-  .title-area {
-      padding: 100px 0 30px 0;
-      background: #fff;
-      border-top: 1px solid #e7e7e7;
-      border-bottom: 1px solid #e7e7e7;
-      text-transform: uppercase;
+  .navbar-nav .nav-link {
+    transform: skewX(0deg);
   }
-  
-  .product-container {
-      background: #fff;
+  .container.nav-container {
+    width: 100%;
+    padding-right: var(--bs-gutter-x, 0.75rem);
+    padding-left: var(--bs-gutter-x, 0.75rem);
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 100%;
   }
-  
-  .product-btns .btn{ 
-      height: 50px;
-      width: 50px;
-      margin: 0 5px;
-      background: var(--background);
-  }
-  h3.product-name {
-      font-size: 1.5rem;
-      text-transform: capitalize;
-  }
-  h3.product-name a {
-      text-decoration: none;
-      color: var(--black);
-  }
-
-  h3.product-name a:hover {
-    text-decoration: none;
-    color: var(--marigold);
-}
-  .product-image {
-      padding: 30px;
-  }
-  .product-detail a {
-      text-decoration: none;
-      color: var(--black);
-      transition: all ease .3s;
-  }
-  .product-detail a:hover {
-      color: var(--marigold);
-  }
-  .profile-sidebar {
-      background: #fff;
-      padding-bottom: 25px;
-  }
-  .profile-sidebar ul {
-      border-top:1px solid #e7e7e7;
-  }
-  .profile-sidebar li {
-      padding: 10px 20px;
-      border-bottom: 1px solid #e7e7e7;
-  }
-  li.section-header {
-      background: var(--black);
-      color: #fff;
-  }
-  .profile-header {
-      padding: 10px;
-      background: #fff;
-  }
-  
-  .btn-primary {
-      background: var(--black);
-      border-color: var(--black);
-      
-  }
-  button.btn:hover, a.btn:hover {
-      background: var(--marigold);
-      color: var(--black);
-  }
-  .user-photo {
-      padding: 20px 0;
-  }
-  .img-round {
-      border-radius: 50%;
-      overflow: hidden;
-  }
-  h2 .subheader {
-      display: block;
-      font-size: 50%;
-      color: #666;
-  }
-  .break {
-      display: block;
-  }
-  .add-shoe-form {
-      background: #fff;
-      padding: 20px;
-  }
-  #login-area {
-      padding-top: 100px;
-  }
-  
-  .form-signin {
-      padding-top: 100px;
-  }
-  .form-floating {
-      margin-bottom: 10px;
-  }
-  .details-container {
-      padding: 30px;
-      background: #fff;
-  }
-
-  .side-content {
-      background: #fff;
-  }
-  
-  .watched::before {
-      position: absolute;
-      display: inline-block;
-      font-style: normal;
-      font-variant: normal;
-      text-rendering: auto;
-      -webkit-font-smoothing: antialiased;
-      font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f004";
-      margin-left: 10px;
-      margin-top: 10px;
-      color: var(--marigold);
-  }
-  
-  @media screen and (max-width: 991px) {
-      a.navbar-brand img {
-          width: 200px;
-      }
-      .navbar {
-          padding-top: .5rem;
-          padding-bottom: .5rem;
-      }
-      .market-box {
-          margin-bottom: 10px;
-      }
-      .navbar li.nav-item {
-        transform: skewX(0deg);
-      }
-      .navbar-nav .nav-link {
-          transform: skewX(0deg);
-      }
-      .container.nav-container {
-          width: 100%;
-          padding-right: var(--bs-gutter-x,.75rem);
-            padding-left: var(--bs-gutter-x,.75rem);
-            margin-right: auto;
-            margin-left: auto;
-            max-width: 100%;
-      }
-      .navbar li.nav-item {
-          border-left: none;
+  .navbar li.nav-item {
+    border-left: none;
   }
   .navbar li.nav-item:last-child {
     border-right: none;
-}
-
-.navbar-nav .nav-link {
-    padding: 1rem .5rem !important;
-}
   }
 
-  @media screen and (max-width: 768px) {
-      .title-area h1 {
-          font-size: 50px;
-      }
+  .navbar-nav .nav-link {
+    padding: 1rem 0.5rem !important;
   }
+}
+
+@media screen and (max-width: 768px) {
+  .title-area h1 {
+    font-size: 50px;
+  }
+}
