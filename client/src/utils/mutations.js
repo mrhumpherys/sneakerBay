@@ -58,3 +58,18 @@ export const ADD_SHOE = gql`
   }
 `;
 
+export const DELETE_SHOE = gql`
+  mutation removeShoe($_id: ID!) {
+    removeShoe(_id: $_id ) {
+        _id
+        username
+      email
+      toSell {
+        _id
+      }
+      bought {
+        name
+      }
+    }
+  }
+`;

@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Link } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { useQuery } from '@apollo/react-hooks';
 import { QUERY_SHOE } from '../utils/queries';
 import { useParams } from 'react-router-dom';
@@ -29,7 +29,7 @@ function SingleProduct() {
                     </div>
                 </section>
 
-                <section className="profile pt-5">
+                <section className="single-shoe-container pt-5">
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-6">
@@ -37,15 +37,17 @@ function SingleProduct() {
                                     <img src="https://via.placeholder.com/1200x1200" className="img-fluid" alt="" />
                                 </div>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 side-content">
                                 <div className="row">
-                                    <div className="col-12">
-                                        <h2>{shoe.name}<span className="subheader">{shoe.username}</span></h2>
-                                        <h3 className="mb-4">{shoe.price}</h3>
-                                        <p>{shoe.description}</p>
-                                        <h4>{shoe.size}</h4>
+                                    <div className="col-12 details-container">
+                                        <div  className="d-flex justify-content-between mt-3">
+                                            <h2>{shoe.name}<span className="subheader">SELLER: {shoe.username}</span></h2>
+                                            <h2 className="mb-4">${shoe.price}</h2>
+                                        </div>
+                                        <h4>SIZE: {shoe.size}</h4>
+                                        <p><strong>Description:<br /></strong>{shoe.description}</p>
                                         <button type="button" className="btn btn-primary">BUY THESE NOW</button>
-                                        <Link to="#" className="btn"><i className="far fa-heart"></i> Add to Watchlists</Link>
+                                        
                                     </div>
                                 </div>
                             </div>

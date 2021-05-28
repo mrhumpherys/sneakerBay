@@ -2,32 +2,33 @@ import React, { useState } from "react";
 import { Route } from "react-router-dom";
 import { useMutation } from '@apollo/react-hooks';
 import { ADD_SHOE } from '../utils/mutations';
-import { QUERY_SHOES, QUERY_ME } from '../utils/queries';
+//import { QUERY_SHOES, QUERY_ME } from '../utils/queries';
 
 function AddShoe() {
 
   const [shoeFormData, setShoeFormData] = useState({ name: '', size:'', description: '', price: ''})
-  const [addNewShoe, { error }] = useMutation(ADD_SHOE, {
-    update(cache, { data: { addNewShoe } }) {
-      try {
-        // could potentially not exist yet, so wrap in a try...catch
-        const { shoes } = cache.readQuery({ query: QUERY_SHOES });
-        cache.writeQuery({
-          query: QUERY_SHOES,
-          data: { shoes: [addNewShoe, ...shoes] }
-        });
-      } catch (e) {
-        console.error(e);
-      }
+  const [addNewShoe, { error }] = useMutation(ADD_SHOE)
+  // , {
+//     update(cache, { data: { addNewShoe } }) {
+//       try {
+//         // could potentially not exist yet, so wrap in a try...catch
+//         const { shoes } = cache.readQuery({ query: QUERY_SHOES });
+//         cache.writeQuery({
+//           query: QUERY_SHOES,
+//           data: { shoes: [addNewShoe, ...shoes] }
+//         });
+//       } catch (e) {
+//         console.error(e);
+//       }
   
-      // update me object's cache, appending new thought to the end of the array
-      const { me } = cache.readQuery({ query: QUERY_ME });
-      cache.writeQuery({
-        query: QUERY_ME,
-        data: { me: { ...me, toSell: [...me.toSell, addNewShoe] } }
-      });
-    }
-});
+//       // update me object's cache, appending new thought to the end of the array
+//       const { me } = cache.readQuery({ query: QUERY_ME });
+//       cache.writeQuery({
+//         query: QUERY_ME,
+//         data: { me: { ...me, toSell: [...me.toSell, addNewShoe] } }
+//       });
+//     }
+// });
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -47,7 +48,7 @@ function AddShoe() {
         });
 
         setShoeFormData({ name: '', size:'', description: '', price: ''});
-        window.location('/dashboard');
+
         
     } catch (e) {
         console.log(e);
@@ -105,24 +106,10 @@ function AddShoe() {
                         aria-describedby="emailHelp"
                         value={shoeFormData.name}
                         onChange={handleChange}
+                        placeholder="Example: Nike Jordan 1"
                       />
                     </div>
-                    <div className="mb-3">
-                      <label
-                        htmlFor="exampleInputPassword1"
-                        className="form-label"
-                      >
-                        Description
-                      </label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="exampleInputPassword1"
-                        name="description"
-                        value={shoeFormData.description}
-                        onChange={handleChange}
-                      />
-                    </div>
+                    
                     <div className="mb-3">
                       <label
                         htmlFor="exampleInputPassword1"
@@ -137,6 +124,7 @@ function AddShoe() {
                         name="size"
                         value={shoeFormData.size}
                         onChange={handleChange}
+                        placeholder="Example: 10.0"
                       />
                     </div>
                     <div className="mb-3">
@@ -153,124 +141,27 @@ function AddShoe() {
                         name="price"
                         value={shoeFormData.price}
                         onChange={handleChange}
+                        placeholder="$99.00"
                       />
                     </div>
-                    {/* <div className="mb-3">
+                    <div className="mb-3">
                       <label
                         htmlFor="exampleInputPassword1"
                         className="form-label"
                       >
-                        Shoe Size
+                        Description
                       </label>
-                      <select
-                        className="form-select"
-                        aria-label="Default select example"
-                      >
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                      </select>
+                      <textarea
+                        className="form-control"
+                        id="exampleInputPassword1"
+                        name="description"
+                        value={shoeFormData.description}
+                        onChange={handleChange}
+                        placeholder="Enter your description"
+                        
+                      ></textarea>
                     </div>
-                    <div className="mb-3">
-                      <label
-                        htmlFor="exampleInputPassword1"
-                        className="form-label break"
-                      >
-                        Shoe Size
-                      </label>
-                      <div className="form-check form-check-inline">
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="inlineRadioOptions"
-                          id="inlineRadio1"
-                          value="option1"
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor="inlineRadio1"
-                        >
-                          Mens
-                        </label>
-                      </div>
-                      <div className="form-check form-check-inline">
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="inlineRadioOptions"
-                          id="inlineRadio2"
-                          value="option2"
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor="inlineRadio2"
-                        >
-                          Womens
-                        </label>
-                      </div>
-                      <div className="form-check form-check-inline">
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="inlineRadioOptions"
-                          id="inlineRadio3"
-                          value="option3"
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor="inlineRadio3"
-                        >
-                          Grade School
-                        </label>
-                      </div>
-                    </div>
-                    <div className="mb-3">
-                      <label htmlFor="" className="form-label break">
-                        Colors
-                      </label>
-                      <div className="form-check form-check-inline">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          id="inlineCheckbox1"
-                          value="option1"
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor="inlineCheckbox1"
-                        >
-                          Red
-                        </label>
-                      </div>
-                      <div className="form-check form-check-inline">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          id="inlineCheckbox2"
-                          value="option2"
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor="inlineCheckbox2"
-                        >
-                          Green
-                        </label>
-                      </div>
-                      <div className="form-check form-check-inline">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          id="inlineCheckbox3"
-                          value="option3"
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor="inlineCheckbox3" */}
-                        {/* >
-                          Blue
-                        </label>
-                      </div> */}
-                    {/* </div> */}
+                    
                     <button type="submit" className="btn btn-primary">
                       Submit
                     </button>

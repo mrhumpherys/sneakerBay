@@ -13,7 +13,7 @@
       color: #242424;
       font-family: 'Source Sans Pro', sans-serif;
       height: 100%;
-      background:  var(--background);
+      background:  #e7e7e7;
   }
   h1, h2, h3, h4, h5, h6, .btn {
       font-family: 'Oswald', sans-serif;
@@ -94,6 +94,7 @@
   }
   h3.product-name {
       font-size: 1.5rem;
+      text-transform: capitalize;
   }
   h3.product-name a {
       text-decoration: none;
@@ -106,6 +107,14 @@
 }
   .product-image {
       padding: 30px;
+  }
+  .product-detail a {
+      text-decoration: none;
+      color: var(--black);
+      transition: all ease .3s;
+  }
+  .product-detail a:hover {
+      color: var(--marigold);
   }
   .profile-sidebar {
       background: #fff;
@@ -165,6 +174,14 @@
   .form-floating {
       margin-bottom: 10px;
   }
+  .details-container {
+      padding: 30px;
+      background: #fff;
+  }
+
+  .side-content {
+      background: #fff;
+  }
   
   .watched::before {
       position: absolute;
@@ -214,4 +231,10 @@
 .navbar-nav .nav-link {
     padding: 1rem .5rem !important;
 }
+  }
+
+  @media screen and (max-width: 768px) {
+      .title-area h1 {
+          font-size: 50px;
+      }
   }

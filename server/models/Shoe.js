@@ -17,7 +17,7 @@ const shoeSchema = new Schema(
             type: String,
             required: 'You must have a description of your sneakers!',
             minlength: 1,
-            maxlength: 280
+            maxlength: 1000
         },
         image:{
             type: String

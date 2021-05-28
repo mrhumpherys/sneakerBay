@@ -21,6 +21,7 @@ const typeDefs = gql`
         sold: Boolean
         createdAt: String
         username: String
+        image: String
     }
 
     type Auth {
