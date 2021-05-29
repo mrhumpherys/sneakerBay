@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import ConfirmDelete from "./confirmDelete";
+//import ConfirmDelete from "./confirmDelete";
 // import { QUERY_SHOE } from '../utils/queries';
-import { useParams } from 'react-router-dom';
+import { useMutation } from '@apollo/react-hooks';
+import { DELETE_SHOE } from '../../utils/mutations';
+
 
 
 
 const ModalDelete = ({ shoe, onClose }) => {
      // ================ modal start ================== //
      const [isModalOpen, setIsModalOpen] = useState(false);
-     const { id: shoeId } = useParams();
      const toggleModal = () => {
          setIsModalOpen(!isModalOpen);
      };
@@ -22,6 +23,22 @@ const ModalDelete = ({ shoe, onClose }) => {
     //     return <div>Loading...</div>
     // }
     // const { name, brand, description, price, size  } = currentShoe;
+    const [removeMyShoe, { error }] = useMutation(DELETE_SHOE)
+    const deleteShoeHandler = async e => {
+        e.preventDefault();
+
+
+        try {
+            await removeMyShoe({
+                variables: { _id: e.target.value }
+                
+            });
+            onClose()
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
     return (
       
         <div className="container modalBackdrop">
@@ -35,6 +52,7 @@ const ModalDelete = ({ shoe, onClose }) => {
                     </div>
 
                     <div className="modal-body">
+                    {error && <span className="alert alert-danger ml-2">Something went wrong...</span>}
                         <div className="product-image">
                             <img src="https://via.placeholder.com/350x350" className="img-fluid" alt="" />
                         </div>
@@ -45,9 +63,7 @@ const ModalDelete = ({ shoe, onClose }) => {
                         <h4><strong>{shoe.size}</strong></h4>
                     </div>
                     <div className="modal-footer">
-                        <button id="modal-btn" type="button" className="btn btn-danger" data-toggle="modal" onClick={() => toggleModal()}>Heck Ya!</button>
-                        {isModalOpen && <ConfirmDelete shoe={shoe} onClose={toggleModal} />}
-                        {/* <button type="button" className="btn btn-danger" data-dismiss="modal">Heck Ya!</button>  */}
+                        <button id="modal-btn" type="button" className="btn btn-danger" data-toggle="modal" value={shoe._id} onClick={deleteShoeHandler}>Heck Ya!</button>
                         <button  id="modal-btn" type="button" className="btn btn-warning" onClick={onClose}>Nope</button>
                     </div>
                     </div>

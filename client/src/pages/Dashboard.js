@@ -68,7 +68,7 @@ const Dashboard = () => {
                             </div>
                             <div className="col-lg-9">
                                 <div className="row">
-                                    <div className="col-12"><h2>SALES</h2></div>
+                                    <div className="col-12"><h2>MY SHOES</h2></div>
                                 </div>
                                 <div className="row">
                                     

@@ -6,6 +6,9 @@ import { Link } from 'react-router-dom';
 
 
 function BoughtSneaker({ bought }) {
+    if (!bought.length) {
+        return <h3>Do you even buy bro? <Link to="/">Go to shoes</Link></h3>;
+      }
 
     return (
         <>

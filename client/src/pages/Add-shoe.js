@@ -3,9 +3,16 @@ import { Route } from "react-router-dom";
 import { useMutation } from '@apollo/react-hooks';
 import { ADD_SHOE } from '../utils/mutations';
 //import { QUERY_SHOES, QUERY_ME } from '../utils/queries';
+import  Modals  from '../components/Modals';
 
 
 function AddShoe() {
+  // ================ modal start ================== //
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const toggleModal = () => {
+      setIsModalOpen(!isModalOpen);
+    };
+// ================ modal end ================== //
 
   const [shoeFormData, setShoeFormData] = useState({ name: '', size:'', description: '', price: ''})
   const [addNewShoe, { error }] = useMutation(ADD_SHOE)
@@ -29,10 +36,12 @@ function AddShoe() {
         });
 
         setShoeFormData({ name: '', size:'', description: '', price: ''});
-        
+        toggleModal();
     } catch (e) {
         console.log(e);
     }
+    //<button type="button" className="btn btn-primary" data-toggle="modal" onClick={() => toggleModal()}>BUY THESE NOW</button>
+    //{isModalOpen && <ModalCheckout shoe={shoe} onClose={toggleModal} />}
   };
 
   return (
@@ -145,6 +154,7 @@ function AddShoe() {
                     <button type="submit" className="btn btn-primary">
                       Submit
                     </button>
+                    
                   </div>
                 </form>
                 {error && <span className="ml-2">Something went wrong...</span>}
@@ -153,6 +163,7 @@ function AddShoe() {
           </div>
         </section>
       </main>
+      {isModalOpen && <Modals onClose={toggleModal} />}
     </Route>
   );
 }

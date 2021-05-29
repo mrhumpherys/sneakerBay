@@ -16,25 +16,14 @@ function SneakerContainer({ toSell }) {
         setIsModalOpen(!isModalOpen);
     };
     // ================ modal end ================== //
-    const [removeMyShoe, { error }] = useMutation(DELETE_SHOE)
-
-
-    const deleteShoeHandler = async e => {
-        e.preventDefault();
-        console.log(`Let's delete this sucker!`);
-        console.log(e.target.id)
-
-        try {
-            await removeMyShoe({
-                variables: { _id: e.target.id }
-            });
-        } catch (e) {
-            console.log(e);
-        }
-    }
+    
+    if (!toSell.length) {
+        return <h3>Got some shoes you want to sell? <Link to="/add-shoe">Click here</Link></h3>;
+      }
+    
     return (
         <>
-            {error && <span className="alert alert-danger ml-2">Something went wrong...</span>}
+
             {toSell.map((shoe) => (
                 <div className="col-lg-4" key={shoe._id}>
                     <div className="product-container mb-4">
@@ -45,6 +34,7 @@ function SneakerContainer({ toSell }) {
                             <h3 className="product-name"><Link to={`/single-product/${shoe._id}`}>{shoe.name}</Link></h3>
                             <div className="d-flex justify-content-between">
                                 <span className="size">Size: {shoe.size}</span>
+                                {shoe.sold && <span>sold</span>}
                                 <span className="price"><strong>${shoe.price}</strong></span>
                             </div>
                         </div>
