@@ -1,8 +1,29 @@
 import React from "react";
+import { useMutation } from '@apollo/react-hooks'
+import { BUY_SHOE } from '../../utils/mutations'
 
 
 const ModalCheckout = ({ shoe, onClose }) => {
     // const { name, brand, description, price, size  } = currentShoe;
+    const [buyShoe, { error }] = useMutation(BUY_SHOE);
+
+
+    const buyShoeHandler = async e => {
+        e.preventDefault();
+        console.log(`bought`);
+        console.log(e.target.value)
+
+        try {
+            await buyShoe({
+                variables: { _id: e.target.value }
+            });
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
+
+
     return (
         <div className="container modalBackdrop">
             <div className="modal-dialog">
@@ -17,14 +38,15 @@ const ModalCheckout = ({ shoe, onClose }) => {
                         </div>
                         <h3><strong>Is this the shiznit you want to buy? Are you sure?</strong></h3>
                         <h4><strong>{shoe.name}</strong></h4>
-                        <h4><strong>By: Nike</strong></h4>
-                        <h4><strong>Purchase Price: $299.99</strong></h4>
-                        <h4><strong>Size: 11.5 EW</strong></h4>
+                        <h4><strong>{shoe.username}</strong></h4>
+                        <h4><strong>{shoe.price}</strong></h4>
+                        <h4><strong>{shoe.size}</strong></h4>
                     </div>
                     <div className="modal-footer">
-                        <button  id="modal-btn" type="button" className="btn btn-danger" data-dismiss="modal">Heck Ya!</button>
+                        <button  id="modal-btn" value={shoe._id} onClick={buyShoeHandler} type="button" className="btn btn-danger" data-dismiss="modal">Heck Ya!</button>
                         <button  id="modal-btn" type="button" className="btn btn-warning" onClick={onClose}>Nope</button>
                     </div>
+                    {error && <span className="alert alert-danger ml-2">Something went wrong...</span>}
                 </div>
             </div>
         </div>

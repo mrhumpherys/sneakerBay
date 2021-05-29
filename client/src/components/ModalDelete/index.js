@@ -4,6 +4,7 @@ import ConfirmDelete from "./confirmDelete";
 import { useParams } from 'react-router-dom';
 
 
+
 const ModalDelete = ({ shoe, onClose }) => {
      // ================ modal start ================== //
      const [isModalOpen, setIsModalOpen] = useState(false);
@@ -39,9 +40,9 @@ const ModalDelete = ({ shoe, onClose }) => {
                         </div>
                         <h3><strong>You really want to delete this shiznit? Are you sure?</strong></h3>
                         <h4><strong>{shoe.name}</strong></h4>
-                        <h4><strong>By: Nike</strong></h4>
-                        <h4><strong>Purchase Price: $299.99</strong></h4>
-                        <h4><strong>Size: 11.5 EW</strong></h4>
+                        <h4><strong>{shoe.username}</strong></h4>
+                        <h4><strong>${shoe.price}</strong></h4>
+                        <h4><strong>{shoe.size}</strong></h4>
                     </div>
                     <div className="modal-footer">
                         <button id="modal-btn" type="button" className="btn btn-danger" data-toggle="modal" onClick={() => toggleModal()}>Heck Ya!</button>

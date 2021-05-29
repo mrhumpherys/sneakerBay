@@ -73,3 +73,20 @@ export const DELETE_SHOE = gql`
     }
   }
 `;
+
+export const BUY_SHOE = gql`
+mutation buyShoe($_id: ID!) {
+  buyShoe(_id: $_id) {
+    _id
+    username
+    email
+    toSell {
+      _id
+      
+    }
+    bought {
+      _id
+    }
+  }
+}
+`;
