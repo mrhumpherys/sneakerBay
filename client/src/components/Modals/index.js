@@ -11,11 +11,11 @@ const Modals = ({ onClose }) => {
             <div className="modal-dialog">
                 <div className="modal-content modalContainer">
                     <div className="modal-header">
-                        <h3 className="modal-title"><strong>Purchase</strong></h3>
+                        <h3 className="modal-title"><strong>Submit Successful</strong></h3>
                         <button type="button" className="closeModalBtn" onClick={onClose}>&times;</button>
                     </div>
                     <div className="modal-body">
-                        <h2>Thank you for your purchase.</h2>
+                        <h2>Thank for selling with us!!.</h2>
                         <Link to="/dashboard" className="btn btn-primary">Return to Dashboard</Link>
                         <button  id="modal-btn" type="button" className="btn btn-warning" onClick={onClose}>Add another Shoe</button>
                     </div>

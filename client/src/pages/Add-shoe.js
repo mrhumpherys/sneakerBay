@@ -50,7 +50,7 @@ function AddShoe() {
         <section className="title-area">
           <div className="container">
             <div className="row pb-5">
-              <h1 className="text-center">Add Shoe</h1>
+              <h1 className="text-center">SELL YOUR SHOES</h1>
             </div>
           </div>
         </section>
@@ -63,7 +63,7 @@ function AddShoe() {
                   <div className="col-lg-5">
                     <div className="img-area">
                       <img
-                        src="https://via.placeholder.com/800x640"
+                        src="../img/sneakers.svg"
                         className="img-fluid"
                         alt="placeholder"
                       />

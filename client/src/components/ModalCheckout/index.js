@@ -34,7 +34,7 @@ const ModalCheckout = ({ shoe, onClose }) => {
                     </div>
                     <div className="modal-body">
                         <div className="product-image">
-                            <img src="https://via.placeholder.com/350x350" className="img-fluid" alt="" />
+                            <img src="../img/sneakers.svg" className="img-fluid" alt="" />
                         </div>
                         <h3><strong>Is this the shiznit you want to buy? Are you sure?</strong></h3>
                         <h4><strong>{shoe.name}</strong></h4>
@@ -43,7 +43,8 @@ const ModalCheckout = ({ shoe, onClose }) => {
                         <h4><strong>{shoe.size}</strong></h4>
                     </div>
                     <div className="modal-footer">
-                        <button  id="modal-btn" value={shoe._id} onClick={buyShoeHandler} type="button" className="btn btn-danger" data-dismiss="modal">Heck Ya!</button>
+                        <button  id="modal-btn" value={shoe._id} onClick={buyShoeHandler} type="button" className="btn btn-danger" data-dismiss="modal" >Buy</button>
+                        {/* <a  id="modal-btn" value={shoe._id} type="button" className="btn btn-danger" data-dismiss="modal" href="mailto:sneakerbay@sneakerbay.com?subject=I am interested in these awesome shoes!!&body=I am contacting you in reference to buying these shoes; please contact me as soon as you can so we can speak further. Thank you!!">Buy It!</a> */}
                         <button  id="modal-btn" type="button" className="btn btn-warning" onClick={onClose}>Nope</button>
                     </div>
                     {error && <span className="alert alert-danger ml-2">Something went wrong...</span>}

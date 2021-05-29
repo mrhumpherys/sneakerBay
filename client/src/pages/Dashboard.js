@@ -76,7 +76,7 @@ const Dashboard = () => {
                                     
                                 </div>
                                 <div className="row">
-                                    <div className="col-12"><h2>Purchases</h2></div>
+                                    <div className="col-12"><h2>YOUR PURCHASES</h2></div>
                                 </div>
                                 <div className="row">
                                     <BoughtSneaker bought={userData.bought} />

@@ -12,7 +12,7 @@ const Home = () => {
     pollInterval: 500,
   });
     const shoes = data?.shoes || [];
-    console.log("hello");
+    // console.log("hello");
 
   return (
     <div className="">

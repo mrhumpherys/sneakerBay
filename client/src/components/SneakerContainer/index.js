@@ -1,8 +1,8 @@
 import React, { useState} from 'react';
 import { Link } from 'react-router-dom';
-import { useMutation } from '@apollo/react-hooks';
-import { DELETE_SHOE } from '../../utils/mutations';
-import { useParams } from 'react-router-dom';
+// import { useMutation } from '@apollo/react-hooks';
+// import { DELETE_SHOE } from '../../utils/mutations';
+// import { useParams } from 'react-router-dom';
 import ModalDelete from "../ModalDelete";
 
 
@@ -11,7 +11,7 @@ import ModalDelete from "../ModalDelete";
 function SneakerContainer({ toSell }) {
     // ================ modal start ================== //
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const { id: shoeId } = useParams();
+    // const { id: shoeId } = useParams();
     const toggleModal = () => {
         setIsModalOpen(!isModalOpen);
     };
@@ -25,7 +25,7 @@ function SneakerContainer({ toSell }) {
         <>
 
             {toSell.map((shoe) => (
-                <div className="col-lg-4" key={shoe._id}>
+                <div className="col-lg-4" key={shoe.name}>
                     <div className="product-container mb-4">
                         <div className="product-image">
                             <Link to={`/single-product/${shoe._id}`}><img src="./img/sneakers.svg" className="img-fluid" alt="" /></Link>

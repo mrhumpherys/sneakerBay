@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
+import React from "react";
 //import ConfirmDelete from "./confirmDelete";
 // import { QUERY_SHOE } from '../utils/queries';
 import { useMutation } from '@apollo/react-hooks';
@@ -9,10 +10,10 @@ import { DELETE_SHOE } from '../../utils/mutations';
 
 const ModalDelete = ({ shoe, onClose }) => {
      // ================ modal start ================== //
-     const [isModalOpen, setIsModalOpen] = useState(false);
-     const toggleModal = () => {
-         setIsModalOpen(!isModalOpen);
-     };
+    //  const [isModalOpen, setIsModalOpen] = useState(false);
+    //  const toggleModal = () => {
+    //      setIsModalOpen(!isModalOpen);
+    //  };
      // ================ modal end ================== //
     //  const { loading, data } = useQuery(QUERY_SHOE, {
     //     variables: { id: shoeId }
@@ -54,7 +55,7 @@ const ModalDelete = ({ shoe, onClose }) => {
                     <div className="modal-body">
                     {error && <span className="alert alert-danger ml-2">Something went wrong...</span>}
                         <div className="product-image">
-                            <img src="https://via.placeholder.com/350x350" className="img-fluid" alt="" />
+                            <img src="../img/sneakers.svg" className="img-fluid" alt="" />
                         </div>
                         <h3><strong>You really want to delete this shiznit? Are you sure?</strong></h3>
                         <h4><strong>{shoe.name}</strong></h4>
