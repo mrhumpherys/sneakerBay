@@ -218,22 +218,25 @@ h2 .subheader {
 }
 
 .modalContainer {
-    box-shadow: 11px 9px 17px var(--marigold);
-	background: rgba(199, 195, 195, 0.898);
-	border-radius: 10px;
+
+	border-radius: 4px;
 	max-width: 100%;
 	margin: 50px auto;
 	padding: 10px;
 }
 
 .closeModalBtn {
-    border-radius: 50%;
+    border: none;
+    background: none;
+    font-size: 2rem;
+    line-height: 1rem;
+}
+.closeModalBtn:hover {
+  background: none !important;
 }
 
-#modal-btn  {
-    width: 100px !important;
-    color: black;
-    background: #e7e7e7;
+.modal-header, .modal-footer {
+  border: none;
 }
 
 #modal-btn:hover,

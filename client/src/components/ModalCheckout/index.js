@@ -25,27 +25,34 @@ const ModalCheckout = ({ shoe, onClose }) => {
 
 
     return (
-        <div className="container modalBackdrop">
+        <div className="modalBackdrop">
             <div className="modal-dialog">
                 <div className="modal-content modalContainer">
                     <div className="modal-header">
-                        <h3 className="modal-title"><strong>Purchase</strong></h3>
+                        <h3 className="modal-title"><strong>Confirm your purchase</strong></h3>
                         <button type="button" className="closeModalBtn" onClick={onClose}>&times;</button>
                     </div>
                     <div className="modal-body">
-                        <div className="product-image">
+                    <div className="row">
+                            <div className="col-6">
+                            <div className="product-image">
                             <img src="../img/sneakers.svg" className="img-fluid" alt="" />
+                            </div>
+                            </div>
+                            <div className="col-6">
+                            <ul className="list-unstyled">
+                                <li><h2>{shoe.name}</h2></li>
+                                <li>Price: ${shoe.price}</li>
+                                <li>Size: {shoe.size}</li>
+
+                            </ul>
+                            </div>
                         </div>
-                        <h3><strong>Is this the shiznit you want to buy? Are you sure?</strong></h3>
-                        <h4><strong>{shoe.name}</strong></h4>
-                        <h4><strong>{shoe.username}</strong></h4>
-                        <h4><strong>{shoe.price}</strong></h4>
-                        <h4><strong>{shoe.size}</strong></h4>
                     </div>
                     <div className="modal-footer">
-                        <button  id="modal-btn" value={shoe._id} onClick={buyShoeHandler} type="button" className="btn btn-danger" data-dismiss="modal" >Buy</button>
+                        <button  id="modal-btn" value={shoe._id} onClick={buyShoeHandler} type="button" className="btn btn-danger" data-dismiss="modal" ><i class="fas fa-shopping-bag"></i> Buy</button>
                         {/* <a  id="modal-btn" value={shoe._id} type="button" className="btn btn-danger" data-dismiss="modal" href="mailto:sneakerbay@sneakerbay.com?subject=I am interested in these awesome shoes!!&body=I am contacting you in reference to buying these shoes; please contact me as soon as you can so we can speak further. Thank you!!">Buy It!</a> */}
-                        <button  id="modal-btn" type="button" className="btn btn-warning" onClick={onClose}>Nope</button>
+                        <button  id="modal-btn" type="button" className="btn btn-warning" onClick={onClose}><i className="fas fa-ban"></i> Cancel</button>
                     </div>
                     {error && <span className="alert alert-danger ml-2">Something went wrong...</span>}
                 </div>

@@ -42,30 +42,40 @@ const ModalDelete = ({ shoe, onClose }) => {
 
     return (
       
-        <div className="container modalBackdrop">
+        <div className="modalBackdrop">
             {/* <div id="delete-shoe" tabindex="-1" > */}
-            <div className="modal-dialog">
+            <div className="modal-dialog modal-lg">
 
                 <div className="modal-content modalContainer">
-                    <div className="modal-header">           
-                        <h3 className="modal-title"><strong>Delete Item</strong></h3>
+                    <div className="modal-header d-flex align-items-start">           
+                        <h3 className="modal-title"><strong>Are you sure you want to delete these?</strong></h3>
                         <button type="button" className="closeModalBtn" onClick={onClose}>&times;</button>
                     </div>
 
                     <div className="modal-body">
-                    {error && <span className="alert alert-danger ml-2">Something went wrong...</span>}
-                        <div className="product-image">
+                        <div className="row">
+                            <div className="col-6">
+                            <div className="product-image">
                             <img src="../img/sneakers.svg" className="img-fluid" alt="" />
+                            </div>
+                            </div>
+                            <div className="col-6">
+                            <ul className="list-unstyled">
+                                <li><h2>{shoe.name}</h2></li>
+                                <li>Price: ${shoe.price}</li>
+                                <li>Size: {shoe.size}</li>
+
+                            </ul>
+                            </div>
                         </div>
-                        <h3><strong>You really want to delete this shiznit? Are you sure?</strong></h3>
-                        <h4><strong>{shoe.name}</strong></h4>
-                        <h4><strong>{shoe.username}</strong></h4>
-                        <h4><strong>${shoe.price}</strong></h4>
-                        <h4><strong>{shoe.size}</strong></h4>
+                    {error && <span className="alert alert-danger ml-2">Something went wrong...</span>}
+                        
+                        
+                        
                     </div>
                     <div className="modal-footer">
-                        <button id="modal-btn" type="button" className="btn btn-danger" data-toggle="modal" value={shoe._id} onClick={deleteShoeHandler}>Heck Ya!</button>
-                        <button  id="modal-btn" type="button" className="btn btn-warning" onClick={onClose}>Nope</button>
+                        <button id="modal-btn" type="button" className="btn btn-primary " data-toggle="modal" value={shoe._id} onClick={deleteShoeHandler}><i className="fas fa-trash-alt"></i> Delete</button>
+                        <button  id="modal-btn" type="button" className="btn btn-warning" onClick={onClose}><i className="fas fa-ban"></i> Cancel</button>
                     </div>
                     </div>
                 </div>
