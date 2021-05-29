@@ -130,7 +130,7 @@ function AddShoe() {
                         name="price"
                         value={shoeFormData.price}
                         onChange={handleChange}
-                        placeholder="$99.00"
+                        placeholder="99.00"
                       />
                     </div>
                     <div className="mb-3">

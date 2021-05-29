@@ -4,6 +4,7 @@ import { useQuery } from '@apollo/react-hooks';
 import { QUERY_SHOE } from '../utils/queries';
 import { useParams } from 'react-router-dom';
 import ModalCheckout from "../components/ModalCheckout";
+import Auth from '../utils/auth';
 
 
 function SingleProduct() {
@@ -19,7 +20,18 @@ function SingleProduct() {
     });
     const shoe = data?.shoe || {};
     
+    const current = Auth.getProfile();
+    const currentUser = current.data.username
+    console.log(shoe.sold);
 
+    function buyButtonHandler(user) {
+        if ( currentUser === user || shoe.sold === true) {
+            return null;
+        }
+        return (
+            <button type="button" className="btn btn-primary" data-toggle="modal" onClick={() => toggleModal()}>BUY THESE NOW</button>
+        )
+    }
 
     if (loading) {
         return <div>Loading...</div>
@@ -53,7 +65,7 @@ function SingleProduct() {
                                         </div>
                                         <h4>SIZE: {shoe.size}</h4>
                                         <p><strong>Description:<br /></strong>{shoe.description}</p>
-                                        <button type="button" className="btn btn-primary" data-toggle="modal" onClick={() => toggleModal()}>BUY THESE NOW</button>
+                                        {buyButtonHandler(shoe.username)}
                                         {isModalOpen && <ModalCheckout shoe={shoe} onClose={toggleModal} />}
                                     </div>
                                 </div>

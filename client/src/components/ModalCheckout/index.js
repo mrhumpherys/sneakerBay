@@ -1,22 +1,35 @@
 import React from "react";
-import { useMutation } from '@apollo/react-hooks'
+import { useMutation, useQuery } from '@apollo/react-hooks'
 import { BUY_SHOE } from '../../utils/mutations'
+import { useHistory } from 'react-router-dom';
+import { QUERY_USER } from '../../utils/queries';
 
 
 const ModalCheckout = ({ shoe, onClose }) => {
     // const { name, brand, description, price, size  } = currentShoe;
+    const { data } = useQuery(QUERY_USER, 
+        { variables : { username: shoe.username } });
     const [buyShoe, { error }] = useMutation(BUY_SHOE);
+    const history = useHistory();
 
 
+    const userData = data?.user || {};
+
+        console.log(userData.email);
     const buyShoeHandler = async e => {
         e.preventDefault();
         console.log(`bought`);
         console.log(e.target.value)
 
+        const mailto = `mailto:${userData.email}?subject=${shoe.name}&body=I am contacting you in reference to buying these ${shoe.name}; please contact me as soon as you can so we can speak further. Thank you!!`;
+        window.location.href = mailto;
+
         try {
             await buyShoe({
                 variables: { _id: e.target.value }
             });
+            
+            history.push('/dashboard');
         } catch (e) {
             console.log(e);
         }
@@ -38,14 +51,14 @@ const ModalCheckout = ({ shoe, onClose }) => {
                         </div>
                         <h3><strong>Is this the shiznit you want to buy? Are you sure?</strong></h3>
                         <h4><strong>{shoe.name}</strong></h4>
-                        <h4><strong>{shoe.username}</strong></h4>
-                        <h4><strong>{shoe.price}</strong></h4>
-                        <h4><strong>{shoe.size}</strong></h4>
+                        <h4><strong>Seller: {shoe.username}</strong></h4>
+                        <h4><strong>Price: ${shoe.price}</strong></h4>
+                        <h4><strong>Size: {shoe.size}</strong></h4>
                     </div>
                     <div className="modal-footer">
-                        <button  id="modal-btn" value={shoe._id} onClick={buyShoeHandler} type="button" className="btn btn-danger" data-dismiss="modal" >Buy</button>
+                        <button id="modal-btn" value={shoe._id} onClick={buyShoeHandler} type="button" className="btn btn-danger" data-dismiss="modal" >Buy</button>
                         {/* <a  id="modal-btn" value={shoe._id} type="button" className="btn btn-danger" data-dismiss="modal" href="mailto:sneakerbay@sneakerbay.com?subject=I am interested in these awesome shoes!!&body=I am contacting you in reference to buying these shoes; please contact me as soon as you can so we can speak further. Thank you!!">Buy It!</a> */}
-                        <button  id="modal-btn" type="button" className="btn btn-warning" onClick={onClose}>Nope</button>
+                        <button id="modal-btn" type="button" className="btn btn-warning" onClick={onClose}>Nope</button>
                     </div>
                     {error && <span className="alert alert-danger ml-2">Something went wrong...</span>}
                 </div>

@@ -59,9 +59,9 @@ const ModalDelete = ({ shoe, onClose }) => {
                         </div>
                         <h3><strong>You really want to delete this shiznit? Are you sure?</strong></h3>
                         <h4><strong>{shoe.name}</strong></h4>
-                        <h4><strong>{shoe.username}</strong></h4>
-                        <h4><strong>${shoe.price}</strong></h4>
-                        <h4><strong>{shoe.size}</strong></h4>
+                        <h4><strong>Seller: {shoe.username}</strong></h4>
+                        <h4><strong>Price: ${shoe.price}</strong></h4>
+                        <h4><strong>Size: {shoe.size}</strong></h4>
                     </div>
                     <div className="modal-footer">
                         <button id="modal-btn" type="button" className="btn btn-danger" data-toggle="modal" value={shoe._id} onClick={deleteShoeHandler}>Heck Ya!</button>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function SearchResult({ shoes }) {
-
+    const avaliableShoes = shoes.filter(shoe => shoe.sold === false )
     return (
 
         <section className="search-results-area">
@@ -12,7 +12,7 @@ function SearchResult({ shoes }) {
                 </div>
                 <div className="row">
                     
-                    {shoes.map(shoe => (
+                    {avaliableShoes.map(shoe => (
                         <div className="col-lg-3" key={shoe._id}>
                             <div className="product-container mb-4">
                                 <div className="product-image">
@@ -28,7 +28,7 @@ function SearchResult({ shoes }) {
                                 </div>
                                 <div className="d-flex justify-content-start px-4 product-btns">
                                     <div className="btn-group my-4" role="group" aria-label="Basic example">
-                                        <button type="button" data-bs-toggle="modal" data-bs-target="#checktoutModal" className="btn"><i className="fas fa-shopping-bag"></i></button>
+                                        
                                         <Link to={`/single-product/${shoe._id}`} className="btn d-flex justify-content-center align-items-center"><i className="fas fa-search"></i></ Link>
                                     </div>
                                 </div>
