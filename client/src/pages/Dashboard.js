@@ -4,6 +4,7 @@ import { useQuery } from '@apollo/react-hooks';
 import { QUERY_ME } from '../utils/queries';
 import SneakerContainer from '../components/SneakerContainer';
 import BoughtSneaker from '../components/BoughtSneaker';
+import facts from "../utils/facts";
 
 const Dashboard = () => {
 
@@ -50,11 +51,12 @@ const Dashboard = () => {
                                             <li className="d-flex justify-content-between">
                                                 <span># of Purchases</span><span>{userData.buyCount}</span>
                                             </li>
-                                            <li className="section-header"><h4>Shipping Address</h4></li>
+                                            <li className="section-header"><h4>Sneaker Facts</h4></li>
                                             <li>
-                                                <span>1600 Pennsylvania Ave NW</span><br />
+                                                {/* <span>1600 Pennsylvania Ave NW</span><br />
                                                 <span>Washington DC, 20500</span><br /><br />
-                                                <Link to=""><i className="fas fa-edit"></i> Edit My Shipping Address</Link>
+                                                <Link to=""><i className="fas fa-edit"></i> Edit My Shipping Address</Link> */}
+                                                <span>{facts()}</span>
                                             </li>
                                             <li className="section-header"><h4>Payment Method</h4></li>
                                             <li>
