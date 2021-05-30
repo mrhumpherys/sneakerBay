@@ -67,7 +67,7 @@ function SingleProduct() {
                                                 <li className="product-title">
                                                     <h2 className="d-flex justify-content-between"><span>{shoe.name}</span><span>${shoe.price}</span></h2>
                                                     </li>
-                                                <li className="before">SOLD BUY: {shoe.username}</li>
+                                                <li className="before">SOLD BY: {shoe.username}</li>
                                                 <li className="before">SIZE: {shoe.size}</li>
                                                 <li><strong>Description:<br /></strong>{shoe.description}</li>
                                             </ul>

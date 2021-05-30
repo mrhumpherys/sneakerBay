@@ -172,6 +172,7 @@ li.product-title {
   background: var(--black);
   padding: 20px;
   border-radius: 6px 6px 0 0;
+  text-transform: capitalize;
 }
 
 li.before {

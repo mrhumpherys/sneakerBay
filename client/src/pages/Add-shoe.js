@@ -69,7 +69,7 @@ function AddShoe() {
                         alt="placeholder"
                       />
                     </div>
-                    <div className="my-3">
+                    {/* <div className="my-3">
                       <label htmlFor="formFile" className="form-label">
                         upload photo
                       </label>
@@ -78,7 +78,7 @@ function AddShoe() {
                         type="file"
                         id="formFile"
                       />
-                    </div>
+                    </div> */}
                   </div>
                   <div className="col-lg-7">
                     <div className="mb-3">

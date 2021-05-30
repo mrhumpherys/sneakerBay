@@ -60,7 +60,6 @@ function SneakerContainer({ toSell }) {
                             <h3 className="product-name"><Link to={`/single-product/${shoe._id}`}>{shoe.name}</Link></h3>
                             <div className="d-flex justify-content-between">
                                 <span className="size">Size: {shoe.size}</span>
-                                {shoe.sold && <span>sold</span>}
                                 <span className="price"><strong>${shoe.price}</strong></span>
                             </div>
                         </div>

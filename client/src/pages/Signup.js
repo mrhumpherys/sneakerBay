@@ -86,12 +86,12 @@ function Signup(props) {
               <button className="w-100 btn btn-lg btn-primary" type="submit">
                 Sign Up
               </button>
+              {error && <div className="alert alert-danger mt-3">Signup failed. Please try again</div>}
               <div className="mt-3">
                 <Link to="/login">Already have an account? Login</Link>
               </div>
-              <p className="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
             </form>
-            {error && <div className="alert alert-danger">Stranger Danger! Signup failed</div>}
+            
           </div>
         </div>
       </div>
