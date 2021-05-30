@@ -26,6 +26,7 @@ function AddShoe() {
       [name]: value,
     });
   };
+  
 
   const handleFormSubmit = async event => {
     event.preventDefault();
@@ -157,7 +158,7 @@ function AddShoe() {
                     
                   </div>
                 </form>
-                {error && <span className="ml-2">Something went wrong...</span>}
+                {error && <span className="ml-2">Something went wrong! You must have a title, size, price, and description to sell your shoe!</span>}
               </div>
             </div>
           </div>

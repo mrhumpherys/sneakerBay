@@ -1,21 +1,36 @@
-import React, { useState} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-// import { useMutation } from '@apollo/react-hooks';
-// import { DELETE_SHOE } from '../../utils/mutations';
+import { useMutation } from '@apollo/react-hooks';
+import { DELETE_SHOE } from '../../utils/mutations';
 // import { useParams } from 'react-router-dom';
-import ModalDelete from "../ModalDelete";
+//import ModalDelete from "../ModalDelete";
 
 
 
 
 function SneakerContainer({ toSell }) {
     // ================ modal start ================== //
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    // const { id: shoeId } = useParams();
-    const toggleModal = () => {
-        setIsModalOpen(!isModalOpen);
-    };
+    // const [isModalOpen, setIsModalOpen] = useState(false);
+    // // const { id: shoeId } = useParams();
+    // const toggleModal = () => {
+    //     setIsModalOpen(!isModalOpen);
+    // };
     // ================ modal end ================== //
+    const [removeMyShoe, { error }] = useMutation(DELETE_SHOE)
+    const deleteShoeHandler = async e => {
+        e.preventDefault();
+        
+
+        try {
+            await removeMyShoe({
+                variables: { _id: e.target.id }
+                
+            });
+            // onClose()
+        } catch (e) {
+            console.log(e);
+        }
+    }
     
     if (!toSell.length) {
         return <h3>Got some shoes you want to sell? <Link to="/add-shoe">Click here</Link></h3>;
@@ -42,9 +57,10 @@ function SneakerContainer({ toSell }) {
                             <div className="btn-group my-4" role="group" aria-label="Basic example">
                                 <Link to={`/single-product/${shoe._id}`} className="btn d-flex justify-content-center align-items-center"><i className="fas fa-search"></i></Link>
                                 {/* <button type="button" id={shoe._id} className="btn d-flex justify-content-center align-items-center" onClick={deleteShoeHandler}><i className="fas fa-trash"></i></button> */}
-                                <button type="button" id={shoe._id} className="btn d-flex justify-content-center align-items-center" data-toggle="modal" onClick={() => toggleModal()}><i className="fas fa-trash"></i></button>
-                                {isModalOpen && <ModalDelete shoe={shoe} onClose={toggleModal} />}
+                                <button type="button" id={shoe._id} className="btn d-flex justify-content-center align-items-center" onClick={deleteShoeHandler}><i id={shoe._id} className="fas fa-trash"></i></button>
+                                {/* {isModalOpen && <ModalDelete shoe={shoe} onClose={toggleModal} />} */}
                             </div>
+                            {error && <span className="alert alert-danger ml-2">Unable to delete shoe.</span>}
                         </div>
                     </div>
 
