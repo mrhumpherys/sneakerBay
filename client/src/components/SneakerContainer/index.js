@@ -33,7 +33,16 @@ function SneakerContainer({ toSell }) {
     }
     
     if (!toSell.length) {
-        return <h3>Got some shoes you want to sell? <Link to="/add-shoe">Click here</Link></h3>;
+        return (
+            <div className="row">
+                <div className="col-lg-12">
+                    <div className="well">
+                        <p>Got some shoes you want to sell? <Link to="/add-shoe">Click here</Link></p>
+                    </div>
+                </div>
+            </div>
+        )
+            
       }
     
     return (
@@ -41,7 +50,9 @@ function SneakerContainer({ toSell }) {
 
             {toSell.map((shoe) => (
                 <div className="col-lg-4" key={shoe.name}>
+                    
                     <div className="product-container mb-4">
+                    {shoe.sold && <div className="corner-ribbon">SOLD</div>}
                         <div className="product-image">
                             <Link to={`/single-product/${shoe._id}`}><img src="./img/sneakers.svg" className="img-fluid" alt="" /></Link>
                         </div>

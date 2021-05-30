@@ -15,6 +15,7 @@ import AddShoe from "./pages/Add-shoe";
 import NoMatch from "./pages/NoMatch";
 import './App.css';
 import Auth from "./utils/auth";
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 const client = new ApolloClient({
   request: operation => {

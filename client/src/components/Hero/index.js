@@ -10,9 +10,9 @@ function Hero() {
                 <div className="row d-flex justify-content-center">
                     <div className="col-lg-8">
                         <div className="intro text-center">
-                            <h1>Lorem ipsum dolor sit</h1>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab eos quaerat beatae, voluptates cumque labore officiis eveniet reprehenderit aperiam commodi accusamus sapiente non. Harum rem aut iste ab doloribus delectus.</p>
-                            <Link to="#" className="btn btn-outline-light btn-lg my-3">START SEARCHING NOW</Link>
+                        <h1>Your Ultimate Sneaker Source</h1>
+                            <p><strong>Got 'em!</strong> 2 words every sneaker head loves to say. but we all know how rare it is to get those exclusive shoes. Now we sneakersBay you can don't have to worry. Explore, buy, and sell the best and latest sneakers. The SneakerBay<sup>TM</sup> App connects buyers and sellers of sneakers around the world. Giving you the opportunity to pickup rare shoes you may have missed. </p>
+                            {/* <Link to="#sneakerList" className="btn btn-outline-light btn-lg my-3">FIND YOUR SHOES</Link> */}
                         </div>
                     </div>
                 </div>

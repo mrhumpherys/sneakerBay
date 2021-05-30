@@ -26,7 +26,7 @@ h6,
   font-family: "Oswald", sans-serif;
 }
 h1 {
-  font-size: 6rem;
+  font-size: 4rem;
 }
 h2 {
   font-size: 2.5rem;
@@ -68,6 +68,8 @@ main {
 }
 .intro {
   color: #fff;
+  font-size: 1.25rem;
+  line-height: 2rem;
 }
 .marketing-bar {
   padding: 30px 0;
@@ -90,6 +92,9 @@ main {
 
 .product-container {
   background: #fff;
+  display: block;
+  position: relative;
+  overflow: hidden;
 }
 
 .product-btns .btn {
@@ -158,10 +163,25 @@ a.btn:hover {
   border-radius: 50%;
   overflow: hidden;
 }
-h2 .subheader {
-  display: block;
-  font-size: 50%;
-  color: #666;
+.product-details-list li{ 
+  padding: 10px 0;
+
+}
+li.product-title {
+  color: var(--marigold);
+  background: var(--black);
+  padding: 20px;
+  border-radius: 6px 6px 0 0;
+}
+
+li.before {
+  border-left: 5px solid #242424;
+  margin: 5px 0;
+  padding: 10px;
+  background: #e7e7e7;
+
+  font-family: "Oswald", sans-serif;
+  font-size: 1.25rem;
 }
 .break {
   display: block;
@@ -183,8 +203,14 @@ h2 .subheader {
 .details-container {
   padding: 30px;
   background: #fff;
+  position: relative;
+  overflow: hidden;
 }
-
+.img-large-container {
+  position: relative;
+  overflow: hidden;
+  padding-right: 100px;
+}
 .side-content {
   background: #fff;
 }
@@ -203,7 +229,18 @@ h2 .subheader {
   margin-top: 10px;
   color: var(--marigold);
 }
-
+.well {
+  background: #d7d7d7;
+  padding: 20px;
+  border-radius: 5px;
+  color: #555;
+}
+.well p {
+  margin-bottom: 0;
+}
+.well p a {
+  color: var(--marigold);
+}
 /* ============================ Modals START ===================================== */
 /* ======================================================================= */
 .modalBackdrop {
@@ -230,11 +267,6 @@ h2 .subheader {
     border-radius: 50%;
 }
 
-#modal-btn  {
-    width: 100px !important;
-    color: black;
-    background: #e7e7e7;
-}
 
 #modal-btn:hover,
 .closeModalBtn:hover {
@@ -280,10 +312,31 @@ h2 .subheader {
   .navbar-nav .nav-link {
     padding: 1rem 0.5rem !important;
   }
+  .img-large-container {
+    padding-right: 0;
+  }
 }
 
 @media screen and (max-width: 768px) {
   .title-area h1 {
     font-size: 50px;
   }
+}
+
+
+/* Corner Ribbon */
+
+.corner-ribbon{
+  width: 200px;
+  background: #e43;
+  position: absolute;
+  top: 25px;
+  left: -50px;
+  text-align: center;
+  line-height: 50px;
+  letter-spacing: 1px;
+  color: #f0f0f0;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  background: var(--marigold);
 }

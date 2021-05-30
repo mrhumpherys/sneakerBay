@@ -15,6 +15,7 @@ function Login() {
         const mutationResponse = await login({ variables: { email: formState.email, password: formState.password } })
         const token = mutationResponse.data.login.token;
         Auth.login(token);
+        window.location.href="/dashboard"
       } catch (e) {
         console.log(e)
       }
@@ -34,14 +35,8 @@ function Login() {
         <div className="row d-flex justify-content-center align-items-center">
           <div className="col-lg-4">
             <form onSubmit={handleFormSubmit} className="text-center">
-              <img
-                className="mb-4"
-                src="./img/logo.svg"
-                alt=""
-                width="300"
-                height="35"
-              />
-              <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
+
+              <h1 className="h3 mb-3 fw-normal">Please Login</h1>
 
               <div className="form-floating">
                 <input
@@ -69,14 +64,14 @@ function Login() {
               </div>
 
               <button className="w-100 btn btn-lg btn-primary" type="submit">
-                Sign in
+                Login
               </button>
+              {error && <div className="alert alert-danger mt-2">Incorrect username or password. Please try again.</div>}
               <div className="mt-3">
                 <Link to="/signup">Don't have an account? Sign up</Link>
               </div>
-              <p className="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
             </form>
-            {error && <div className="alert alert-danger">Login failed</div>}
+            
           </div>
         </div>
       </div>

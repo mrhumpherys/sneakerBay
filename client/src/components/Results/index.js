@@ -5,7 +5,7 @@ function SearchResult({ shoes }) {
     const avaliableShoes = shoes.filter(shoe => shoe.sold === false )
     return (
 
-        <section className="search-results-area">
+        <section id="#sneakerList" className="search-results-area">
             <div className="container">
                 <div className="row my-5">
                     <h2>LATEST SHOES</h2>

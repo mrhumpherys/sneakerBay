@@ -38,7 +38,7 @@ const ModalCheckout = ({ shoe, onClose }) => {
 
 
     return (
-        <div className="container modalBackdrop">
+        <div className="modalBackdrop">
             <div className="modal-dialog">
                 <div className="modal-content modalContainer">
                     <div className="modal-header">
@@ -56,7 +56,7 @@ const ModalCheckout = ({ shoe, onClose }) => {
                         <h4><strong>Size: {shoe.size}</strong></h4>
                     </div>
                     <div className="modal-footer">
-                        <button id="modal-btn" value={shoe._id} onClick={buyShoeHandler} type="button" className="btn btn-danger" data-dismiss="modal" >Buy</button>
+                        <button id="modal-btn" value={shoe._id} onClick={buyShoeHandler} type="button" className="btn btn-primary" data-dismiss="modal" >Buy</button>
                         {/* <a  id="modal-btn" value={shoe._id} type="button" className="btn btn-danger" data-dismiss="modal" href="mailto:sneakerbay@sneakerbay.com?subject=I am interested in these awesome shoes!!&body=I am contacting you in reference to buying these shoes; please contact me as soon as you can so we can speak further. Thank you!!">Buy It!</a> */}
                         <button id="modal-btn" type="button" className="btn btn-warning" onClick={onClose}>Nope</button>
                     </div>

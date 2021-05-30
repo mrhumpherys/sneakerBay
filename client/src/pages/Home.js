@@ -19,7 +19,7 @@ const Home = () => {
   {/* <Navbar /> */}
         <Hero />
         <Bar />
-        <Searchbar />
+        {/* <Searchbar /> */}
         {loading ? (
           <div>Loading...</div>
         ) : (

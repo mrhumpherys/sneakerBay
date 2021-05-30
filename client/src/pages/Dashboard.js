@@ -25,7 +25,7 @@ const Dashboard = () => {
                 <section className="title-area">
                     <div className="container">
                         <div className="row pb-5">
-                            <h1 className="text-center">Dashboard</h1>
+                            <h1 className="text-center">{userData.username}'s Dashboard</h1>
                         </div>
                     </div>
                 </section>
@@ -37,7 +37,7 @@ const Dashboard = () => {
                                 <div className="profile-sidebar">
                                     <div className="user-details">
                                         <div className="user-photo d-flex justify-content-center align-items-center">
-                                            <img src="https://via.placeholder.com/150x150" className="img-fluid img-round" alt="" />
+                                            <img src="./img/default.png" className="img-fluid" alt="" />
                                         </div>
                                         <h3 className="text-center pb-2">{userData.username}</h3>
                                         <ul className="list-unstyled">
@@ -75,7 +75,7 @@ const Dashboard = () => {
                                    <SneakerContainer toSell={userData.toSell} />
                                     
                                 </div>
-                                <div className="row">
+                                <div className="row mt-3">
                                     <div className="col-12"><h2>YOUR PURCHASES</h2></div>
                                 </div>
                                 <div className="row">

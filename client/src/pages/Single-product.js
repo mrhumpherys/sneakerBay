@@ -49,22 +49,31 @@ function SingleProduct() {
                 </section>
 
                 <section className="single-shoe-container pt-5">
+                
                     <div className="container">
                         <div className="row">
-                            <div className="col-lg-6">
+                            <div className="col-lg-8">
                                 <div className="img-large-container">
                                     <img src="../img/sneakers.svg" className="img-fluid" alt="" />
                                 </div>
                             </div>
-                            <div className="col-lg-6 side-content">
+                            <div className="col-lg-4 side-content">
                                 <div className="row">
                                     <div className="col-12 details-container">
-                                        <div className="d-flex justify-content-between mt-3">
-                                            <h2>{shoe.name}<span className="subheader">SELLER: {shoe.username}</span></h2>
-                                            <h2 className="mb-4">${shoe.price}</h2>
+                                    {shoe.sold && <div className="corner-ribbon">SOLD</div>}
+                                    
+                                        <div className="mt-3">
+                                            <ul className="list-unstyled product-details-list">
+                                                <li className="product-title">
+                                                    <h2 className="d-flex justify-content-between"><span>{shoe.name}</span><span>${shoe.price}</span></h2>
+                                                    </li>
+                                                <li className="before">SOLD BUY: {shoe.username}</li>
+                                                <li className="before">SIZE: {shoe.size}</li>
+                                                <li><strong>Description:<br /></strong>{shoe.description}</li>
+                                            </ul>
+
                                         </div>
-                                        <h4>SIZE: {shoe.size}</h4>
-                                        <p><strong>Description:<br /></strong>{shoe.description}</p>
+
                                         {buyButtonHandler(shoe.username)}
                                         {isModalOpen && <ModalCheckout shoe={shoe} onClose={toggleModal} />}
                                     </div>

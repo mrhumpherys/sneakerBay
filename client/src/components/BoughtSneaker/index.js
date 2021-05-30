@@ -7,7 +7,16 @@ import { Link } from 'react-router-dom';
 
 function BoughtSneaker({ bought }) {
     if (!bought.length) {
-        return <h3>Do you even buy bro? <Link to="/">Go to shoes</Link></h3>;
+        return (
+            <div className="row">
+                <div className="col-lg-12">
+                <div className="well">
+            <p>Do you even buy bro? <Link to="/">Go to shoes</Link></p>
+        </div>
+                </div>
+            </div>
+        
+        )
       }
 
     return (
