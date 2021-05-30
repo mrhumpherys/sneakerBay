@@ -63,7 +63,7 @@ const ModalCheckout = ({ shoe, onClose }) => {
                         </div>
                     </div>
                     <div className="modal-footer">
-                        <button  id="modal-btn" value={shoe._id} onClick={buyShoeHandler} type="button" className="btn btn-primary" data-dismiss="modal" ><i class="fas fa-shopping-bag"></i> Buy</button>
+                        <button  id="modal-btn" value={shoe._id} onClick={buyShoeHandler} type="button" className="btn btn-primary" data-dismiss="modal" ><i className="fas fa-shopping-bag"></i> Buy</button>
                         {/* <a  id="modal-btn" value={shoe._id} type="button" className="btn btn-danger" data-dismiss="modal" href="mailto:sneakerbay@sneakerbay.com?subject=I am interested in these awesome shoes!!&body=I am contacting you in reference to buying these shoes; please contact me as soon as you can so we can speak further. Thank you!!">Buy It!</a> */}
                         <button  id="modal-btn" type="button" className="btn btn-warning" onClick={onClose}><i className="fas fa-ban"></i> Cancel</button>
                     </div>

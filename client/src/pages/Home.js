@@ -1,7 +1,6 @@
 import React from "react";
 import Hero from '../components/Hero/';
 import Bar from '../components/Bar';
-import Searchbar from '../components/Searchbar';
 import SearchResult from '../components/Results';
 import { useQuery } from '@apollo/react-hooks';
 import { QUERY_SHOES } from '../utils/queries';
