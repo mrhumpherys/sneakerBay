@@ -255,25 +255,32 @@ li.before {
 }
 
 .modalContainer {
-    box-shadow: 11px 9px 17px var(--marigold);
-	background: rgba(199, 195, 195, 0.898);
-	border-radius: 10px;
+
+	border-radius: 4px;
 	max-width: 100%;
 	margin: 50px auto;
 	padding: 10px;
 }
 
 .closeModalBtn {
-    border-radius: 50%;
+    border: none;
+    background: none;
+    font-size: 2rem;
+    line-height: 1rem;
+}
+.closeModalBtn:hover {
+  background: none !important;
 }
 
+.modal-header, .modal-footer {
+  border: none;
+}
 
 #modal-btn:hover,
 .closeModalBtn:hover {
   background: var(--marigold);
   color: var(--black);
 }
-
 /* ======================================================================= */
 /* ============================ Modals END ===================================== */
 
