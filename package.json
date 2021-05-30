@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/mrhumpherys/sneakerBay#readme",
   "dependencies": {
+    "dotenv": "^10.0.0",
     "if-env": "^1.0.4"
   },
   "devDependencies": {
