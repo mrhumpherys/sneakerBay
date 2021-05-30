@@ -7,7 +7,7 @@ const Modals = ({ onClose }) => {
 
 
     return (
-        <div className="container modalBackdrop">
+        <div className="modalBackdrop">
             <div className="modal-dialog">
                 <div className="modal-content modalContainer">
                     <div className="modal-header">
@@ -16,7 +16,7 @@ const Modals = ({ onClose }) => {
                     </div>
                     <div className="modal-body">
                         <h2>Thank for selling with us!!.</h2>
-                        <Link to="/dashboard" className="btn btn-primary">Return to Dashboard</Link>
+                        <Link to="/dashboard" className="btn btn-primary">Return to Dashboard</Link> 
                         <button  id="modal-btn" type="button" className="btn btn-warning" onClick={onClose}>Add another Shoe</button>
                     </div>
                 </div>
