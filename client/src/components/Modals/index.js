@@ -7,7 +7,7 @@ const Modals = ({ onClose }) => {
 
 
     return (
-        <div className="modalBackdrop">
+        <div className="modalBackdrop d-flex justify-content-center align-items-center">
             <div className="modal-dialog">
                 <div className="modal-content modalContainer">
                     <div className="modal-header d-flex justify-content-end">
