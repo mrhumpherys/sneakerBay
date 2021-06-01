@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Link } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { useQuery } from '@apollo/react-hooks';
 import { QUERY_ME } from '../utils/queries';
 import SneakerContainer from '../components/SneakerContainer';
@@ -58,12 +58,12 @@ const Dashboard = () => {
                                                 <Link to=""><i className="fas fa-edit"></i> Edit My Shipping Address</Link> */}
                                                 <span>{facts()}</span>
                                             </li>
-                                            <li className="section-header"><h4>Payment Method</h4></li>
+                                            {/* <li className="section-header"><h4>Payment Method</h4></li>
                                             <li>
                                                 <span>************1234</span><br />
                                                 <span>VISA</span><br /><br />
                                                 <Link to=""><i className="fas fa-edit"></i> Edit My Payment Method</Link>
-                                            </li>
+                                            </li> */}
                                         </ul>
                                     </div>
                                 </div>

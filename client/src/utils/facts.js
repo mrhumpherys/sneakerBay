@@ -23,29 +23,29 @@ function facts() {
 
 
     let ranNum = Math.floor(Math.random() * 18)
-
-    switch (ranNum) {
-        case 0 : return factsArray[0].fact;
-        case 1 : return factsArray[1].fact;
-        case 2 : return factsArray[2].fact;
-        case 3 : return factsArray[3].fact;
-        case 4 : return factsArray[4].fact;
-        case 5 : return factsArray[5].fact;
-        case 6 : return factsArray[6].fact;
-        case 7 : return factsArray[7].fact;
-        case 8 : return factsArray[8].fact;
-        case 9 : return factsArray[9].fact;
-        case 10 : return factsArray[10].fact;
-        case 11 : return factsArray[11].fact;
-        case 12 : return factsArray[12].fact;
-        case 13 : return factsArray[13].fact;
-        case 14 : return factsArray[14].fact;
-        case 15 : return factsArray[15].fact;
-        case 16 : return factsArray[16].fact;
-        case 17 : return factsArray[17].fact;
-        case 18 : return factsArray[18].fact;
-        default: return factsArray[0].fact;
-    }
+    return factsArray[ranNum].fact;
+    // switch (ranNum) {
+    //     case 0 : return factsArray[0].fact;
+    //     case 1 : return factsArray[1].fact;
+    //     case 2 : return factsArray[2].fact;
+    //     case 3 : return factsArray[3].fact;
+    //     case 4 : return factsArray[4].fact;
+    //     case 5 : return factsArray[5].fact;
+    //     case 6 : return factsArray[6].fact;
+    //     case 7 : return factsArray[7].fact;
+    //     case 8 : return factsArray[8].fact;
+    //     case 9 : return factsArray[9].fact;
+    //     case 10 : return factsArray[10].fact;
+    //     case 11 : return factsArray[11].fact;
+    //     case 12 : return factsArray[12].fact;
+    //     case 13 : return factsArray[13].fact;
+    //     case 14 : return factsArray[14].fact;
+    //     case 15 : return factsArray[15].fact;
+    //     case 16 : return factsArray[16].fact;
+    //     case 17 : return factsArray[17].fact;
+    //     case 18 : return factsArray[18].fact;
+    //     default: return factsArray[0].fact;
+    // }
 }
 
 export default facts;
