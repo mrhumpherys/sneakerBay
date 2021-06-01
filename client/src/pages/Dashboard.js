@@ -1,13 +1,19 @@
-import React from "react";
+import React, {useState} from "react";
 import { Route } from 'react-router-dom';
 import { useQuery } from '@apollo/react-hooks';
 import { QUERY_ME } from '../utils/queries';
 import SneakerContainer from '../components/SneakerContainer';
 import BoughtSneaker from '../components/BoughtSneaker';
 import facts from "../utils/facts";
+import { Link } from "react-router-dom";
+import  AvatarModal  from '../components/AvatarModal';
 
 const Dashboard = () => {
 
+    const [isModalOpen, setIsModalOpen] = useState(false);
+  const toggleModal = () => {
+      setIsModalOpen(!isModalOpen);
+    };
     const { loading, data } = useQuery(QUERY_ME, {
         pollInterval: 500,
     });
@@ -40,6 +46,10 @@ const Dashboard = () => {
                                         <div className="user-photo d-flex justify-content-center align-items-center">
                                             <img src="./img/default.png" className="img-fluid" alt="" />
                                         </div>
+                                        <div className="px-3 mb-3 d-flex justify-content-center align-items-center">
+                                        <Link className="btn btn-secondary" to="#" onClick={toggleModal}>change avatar</Link>
+                                        </div>
+                                        
                                         <h3 className="text-center pb-2">{userData.username}</h3>
                                         <ul className="list-unstyled">
                                             <li className="d-flex justify-content-between">
@@ -132,7 +142,7 @@ const Dashboard = () => {
                     </div>
                 </section>
             </main>
-
+            {isModalOpen && <AvatarModal onClose={toggleModal} />}
         </Route>
     )
 }
