@@ -10,6 +10,7 @@ const typeDefs = gql`
         sellCount: Int
         buyCount: Int
         createdAt: String
+        avatar: String
     }
 
     type Shoe {
@@ -59,6 +60,7 @@ const typeDefs = gql`
         removeShoe(_id: ID!): User
         buyShoe(_id: ID!): User
         updateSold(_id: ID!): Shoe
+        updateAvatar(avatar: String!): User
     }
 `;
 

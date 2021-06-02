@@ -15,11 +15,10 @@ const ModalCheckout = ({ shoe, onClose }) => {
 
     const userData = data?.user || {};
 
-        console.log(userData.email);
+ 
     const buyShoeHandler = async e => {
         e.preventDefault();
-        console.log(`bought`);
-        console.log(e.target.value)
+
 
         const mailto = `mailto:${userData.email}?subject=${shoe.name}&body=I am contacting you in reference to buying these ${shoe.name}; please contact me as soon as you can so we can speak further. Thank you!!`;
         window.location.href = mailto;

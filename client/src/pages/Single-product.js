@@ -22,7 +22,7 @@ function SingleProduct() {
     
     const current = Auth.getProfile();
     const currentUser = current.data.username
-    console.log(shoe.sold);
+
 
     function buyButtonHandler(user) {
         if ( currentUser === user || shoe.sold === true) {

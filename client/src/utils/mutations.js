@@ -90,3 +90,12 @@ mutation buyShoe($_id: ID!) {
   }
 }
 `;
+
+export const UPDATE_AVATAR = gql`
+mutation updateAvatar($avatar: String!) {
+  updateAvatar(avatar: $avatar) {
+    _id
+    avatar
+  }
+}
+`;

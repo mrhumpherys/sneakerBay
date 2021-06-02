@@ -82,6 +82,10 @@ main {
 .market-box i {
   font-size: 1.75rem;
 }
+.market-box h3 {
+  font-size: 1.5rem;
+  padding-top:.5rem;
+}
 .title-area {
   padding: 100px 0 30px 0;
   background: #fff;
@@ -242,6 +246,29 @@ li.before {
 .well p a {
   color: var(--marigold);
 }
+#avatar-list {
+  height: 400px;
+  padding: 10px;
+  display: block;
+  transition: all ease .3s;
+  opacity: 1;
+
+}
+#avatar-list.hide {
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+.avatar {
+
+  padding: 5px;
+  cursor: pointer;
+}
+
+.avatar img{
+  height: auto;
+}
+
 /* ============================ Modals START ===================================== */
 /* ======================================================================= */
 .modalBackdrop {
@@ -290,8 +317,8 @@ li.before {
     width: 200px;
   }
   .navbar {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
   .market-box {
     margin-bottom: 10px;

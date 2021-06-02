@@ -38,6 +38,10 @@ const userSchema = new Schema(
             default: Date.now,
             get: timestamp => formatDate(timestamp)
         },
+        avatar: {
+            type: String,
+            default: './img/avatars/default.png'
+        }
     },
     {
         toJSON: {

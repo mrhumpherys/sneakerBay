@@ -44,6 +44,7 @@ export const QUERY_ME = gql`
     sellCount
     buyCount
     createdAt
+    avatar
   }
 }
 `;
@@ -69,6 +70,7 @@ export const QUERY_USER = gql`
       _id
       username
       email
+      avatar
     }
   }
 `;
