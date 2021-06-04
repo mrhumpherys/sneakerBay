@@ -49,7 +49,7 @@ function SneakerContainer({ toSell }) {
         <>
 
             {toSell.map((shoe) => (
-                <div className="col-lg-4" key={shoe.name}>
+                <div className="col-lg-4" key={shoe._id}>
                     
                     <div className="product-container mb-4">
                     {shoe.sold && <div className="corner-ribbon">SOLD</div>}

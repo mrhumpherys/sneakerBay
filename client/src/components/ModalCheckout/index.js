@@ -22,10 +22,10 @@ const ModalCheckout = ({ shoe, onClose }) => {
 
         const mailto = `mailto:${userData.email}?subject=${shoe.name}&body=I am contacting you in reference to buying these ${shoe.name}; please contact me as soon as you can so we can speak further. Thank you!!`;
         window.location.href = mailto;
-
+        
         try {
             await buyShoe({
-                variables: { _id: e.target.value }
+                variables: { _id: e.target.id }
             });
             
             history.push('/dashboard');
@@ -62,7 +62,7 @@ const ModalCheckout = ({ shoe, onClose }) => {
                         </div>
                     </div>
                     <div className="modal-footer">
-                        <button  id="modal-btn" value={shoe._id} onClick={buyShoeHandler} type="button" className="btn btn-primary" data-dismiss="modal" ><i className="fas fa-shopping-bag"></i> Buy</button>
+                        <button  id={shoe._id} value={shoe._id} onClick={buyShoeHandler} type="button" className="btn btn-primary" data-dismiss="modal" ><i className="fas fa-shopping-bag" id={shoe._id}></i> Buy</button>
                         {/* <a  id="modal-btn" value={shoe._id} type="button" className="btn btn-danger" data-dismiss="modal" href="mailto:sneakerbay@sneakerbay.com?subject=I am interested in these awesome shoes!!&body=I am contacting you in reference to buying these shoes; please contact me as soon as you can so we can speak further. Thank you!!">Buy It!</a> */}
                         <button  id="modal-btn" type="button" className="btn btn-warning" onClick={onClose}><i className="fas fa-ban"></i> Cancel</button>
                     </div>
