@@ -20,7 +20,8 @@ const shoeSchema = new Schema(
             maxlength: 1000
         },
         image:{
-            type: String
+            type: String,
+            default: './img/sneakers.svg'
         },
         price: {
             type: String,

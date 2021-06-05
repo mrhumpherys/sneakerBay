@@ -61,6 +61,7 @@ const typeDefs = gql`
         buyShoe(_id: ID!): User
         updateSold(_id: ID!): Shoe
         updateAvatar(avatar: String!): User
+        addShoeImage(image: String!, _id: ID!): Shoe
     }
 `;
 

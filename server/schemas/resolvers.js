@@ -112,6 +112,18 @@ const resolvers = {
             }
             throw new AuthenticationError('You need to be logged in!');
         },
+        addShoeImage: async (parent, args, context) => {
+            if (context.user) {
+                const addShoeImage = await Shoe.findOneAndUpdate(
+                    { _id: args._id }, 
+                    { image: args.image },
+                    { new: true }
+                    );
+                
+                    return addShoeImage
+            }
+            throw new AuthenticationError('You need to be logged in!');
+        },
     }
 };
 

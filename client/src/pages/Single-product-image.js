@@ -1,13 +1,62 @@
 import React, { useState } from "react";
 import { Route } from 'react-router-dom';
-import { useQuery } from '@apollo/react-hooks';
+import { useMutation, useQuery } from '@apollo/react-hooks';
 import { QUERY_SHOE } from '../utils/queries';
+import { ADD_SHOE_IMAGE } from '../utils/mutations'
 import { useParams } from 'react-router-dom';
 import ModalCheckout from "../components/ModalCheckout";
 import Auth from '../utils/auth';
 
 
+
 function SingleProduct() {
+    // const [shoeImage, setShoeImage] = useState('');
+    // const [fileBase64String, setFileBase64String] = useState('');
+    const [addShoeImage] = useMutation(ADD_SHOE_IMAGE)
+    let imgFile;
+    let Base64Image;
+    const onFileChange = (event) => {
+        imgFile = event.target.files[0];
+        let reader = new FileReader();
+        if (imgFile) {
+            reader.readAsDataURL(imgFile);
+            reader.onload = () => {
+                Base64Image = reader.result;
+                //Base64Image = Base64Image.split(",")[1]
+                console.log(Base64Image);
+            };
+            reader.onerror = (error) => {
+                console.log('error: ', error) 
+            };
+            return Base64Image;
+        }
+
+    }
+    // const encodeFileBase64 = (file) => {
+    //     let reader = new FileReader();
+    //     if (imgFile) {
+    //         reader.readAsDataURL(imgFile);
+    //         reader.onload = () => {
+    //             let Base64 = reader.result;
+    //             Base64 = Base64.split(",")[1]
+    //             console.log(Base64);
+    //             setFileBase64String(Base64);
+    //         };
+    //         reader.onerror = (error) => {
+    //             console.log('error: ', error) 
+    //         };
+    //     }
+    // }
+    // encodeFileBase64(selectedFile[0]);
+
+    const imageSubmitHandler = async (event) => {
+        event.preventDefault();
+        // setShoeImage(Base64Image)
+
+        addShoeImage({variables: { image: Base64Image, _id: shoeId }});
+        console.log("this is the shoe " + Base64Image);
+        
+    }
 // ================ modal start ================== //
     const [isModalOpen, setIsModalOpen] = useState(false);
     const { id: shoeId } = useParams();
@@ -20,22 +69,12 @@ function SingleProduct() {
     });
     const shoe = data?.shoe || {};
     
-    console.log(shoe);
     const current = Auth.getProfile();
     const currentUser = current.data.username
-    // let encodedImage = shoe.image;
-    // let decodedImage = atob(encodedImage);
-    // console.log('this is the shoe' + decodedImage);
 
-    function buyButtonHandler(user) {
-        if ( currentUser === user || shoe.sold === true) {
-            return null;
-        }
-        return (
-            <button type="button" className="btn btn-primary" data-toggle="modal" onClick={() => toggleModal()}>BUY THESE NOW</button>
-        )
-    }
-
+    
+    
+    
     if (loading) {
         return <div>Loading...</div>
     }
@@ -59,6 +98,10 @@ function SingleProduct() {
                                 <div className="img-large-container">
                                     <img src={shoe.image} className="img-fluid" alt="" />
                                 </div>
+                                <form onSubmit={imageSubmitHandler}>
+                                    <input type="file" onChange={onFileChange}/>
+                                    <button className="btn btn-primary" type="submit">Submit PHoto</button>
+                                </form>
                             </div>
                             <div className="col-lg-4 side-content">
                                 <div className="row">
@@ -77,7 +120,7 @@ function SingleProduct() {
 
                                         </div>
 
-                                        {buyButtonHandler(shoe.username)}
+
                                         {isModalOpen && <ModalCheckout shoe={shoe} onClose={toggleModal} />}
                                     </div>
                                 </div>

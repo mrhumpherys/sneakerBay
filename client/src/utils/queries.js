@@ -11,6 +11,7 @@ export const QUERY_SHOES = gql`
       sold
       createdAt
       username
+      image
     }
   }
 `;
@@ -60,6 +61,7 @@ export const QUERY_SHOE = gql`
       sold
       createdAt
       username
+      image
     }
   }
 `;

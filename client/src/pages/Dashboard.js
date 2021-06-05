@@ -99,7 +99,7 @@ const Dashboard = () => {
                                                 </div>
                                                 <div className="col-4 avatar">
                                                 <label htmlFor="033-woman">
-                                                    <input type="radio" id="033-man" name="avatars" hidden value="./img/avatars/033-woman.png" />
+                                                    <input type="radio" id="033-woman" name="avatars" hidden value="./img/avatars/033-woman.png" />
                                                     <img src="./img/avatars/033-woman.png" alt=" " className="img-fluid" /></label>
                                                 </div>
                                                 <div className="col-4 avatar">

@@ -16,7 +16,7 @@ function SearchResult({ shoes }) {
                         <div className="col-lg-3" key={shoe._id}>
                             <div className="product-container mb-4">
                                 <div className="product-image">
-                                <Link to={`/single-product/${shoe._id}`}><img src="./img/sneakers.svg" className="img-fluid" alt="" /></Link>
+                                <Link to={`/single-product/${shoe._id}`}><img src={shoe.image} className="img-fluid" alt="" /></Link>
                                 </div>
                                 <div className="product-detail mt-3 px-4">
                                 <Link to={`/single-product/${shoe._id}`}><h3 className="product-name">{shoe.name}</h3></Link>

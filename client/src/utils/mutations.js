@@ -99,3 +99,12 @@ mutation updateAvatar($avatar: String!) {
   }
 }
 `;
+
+export const ADD_SHOE_IMAGE = gql`
+mutation addShoeImage($image: String!, $_id: ID!) {
+  addShoeImage(image: $image, _id: $_id) {
+    _id
+    image
+  }
+}
+`;
