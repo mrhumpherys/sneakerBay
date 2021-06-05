@@ -4,23 +4,9 @@ import { useMutation } from '@apollo/react-hooks';
 import { ADD_SHOE } from '../utils/mutations';
 //import { QUERY_SHOES, QUERY_ME } from '../utils/queries';
 import  Modals  from '../components/Modals';
-import axios from 'axios';
-
 
 
 function AddShoe() {
-
-  // image upload start
-  const [selectedFile, setselecteFile ] = useState(null)
- const onChangeHandler = (event) => {
-  console.log(event.target.files[0])
-  setselecteFile({
-      selectedFile: event.target.files[0],
-      loaded: 0,
-    })
-  }
-// end img area
-
   // ================ modal start ================== //
   const [isModalOpen, setIsModalOpen] = useState(false);
   const toggleModal = () => {
@@ -42,13 +28,9 @@ function AddShoe() {
   };
   
 
-
   const handleFormSubmit = async event => {
     event.preventDefault();
-    // img upload
-    const data = new FormData() 
-    data.append('file', this.state.selectedFile)
-    // img upload
+
     try {
         await addNewShoe({
             variables: { input : shoeFormData }
@@ -59,12 +41,10 @@ function AddShoe() {
     } catch (e) {
         console.log(e);
     }
-    
     //<button type="button" className="btn btn-primary" data-toggle="modal" onClick={() => toggleModal()}>BUY THESE NOW</button>
     //{isModalOpen && <ModalCheckout shoe={shoe} onClose={toggleModal} />}
   };
 
-  
   return (
     <Route>
       <main>
