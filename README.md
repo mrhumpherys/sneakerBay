@@ -1,8 +1,8 @@
 # SneakerBay
 ![Git Hub Language Count](https://img.shields.io/static/v1?label=Languages&message=3&color=yellow&style=flat-square) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
-![Screenshot](./public/assets/images/sportsbuzz.png)
+![Screenshot](./client/public/img/readme1.png)
 # Description 
-SneakerBay is a single page application using React, Node.js, Express.js, and Mongoose, where users can buy and sell the latest sneakers. The user story is as follows:  
+SneakerBay is a full stack single page application using Mongoose, Express.js React, and Node.js, where users can buy and sell the latest sneakers. The user story is as follows:  
 ```  
 As a User:
 When I visit the website I am prompted to signup or login.
@@ -17,22 +17,20 @@ When another user purchases my shoe, my shoe for sale list is immediatly updated
 
 1. [Features](https://github.com/mrhumpherys/sneakerBay#features)  
 2. [Screenshot](https://github.com/mrhumpherys/sneakerBay#screenshot)
-3. [Demo](https://github.com/mrhumpherys/sneakerBay#demo)
-4. [Technology Stack](https://github.com/mrhumpherys/sneakerBay#technology-stack)
-5. [Usage](https://github.com/mrhumpherys/sneakerBay#usage)
-6. [Collaborators](https://github.com/mrhumpherys/sneakerBay#collaborators)
-7. [License](https://github.com/mrhumpherys/sneakerBay#license)
+3. [Demo](https://github.com/mrhumpherys/sneakerBay#demo) 
+4. [Usage](https://github.com/mrhumpherys/sneakerBay#usage)
+5. [Collaborators](https://github.com/mrhumpherys/sneakerBay#collaborators)
+6. [License](https://github.com/mrhumpherys/sneakerBay#license)
 
 # Features  
 
-This application uses Json web tokens for authentification.  
- [Bcrypt](https://www.npmjs.com/package/bcrypt), [Bootstrap](https://www.npmjs.com/package/bootstrap), [Connect-Session-Sequelize](https://www.npmjs.com/package/connect-session-sequelize), [Dotenv](https://www.npmjs.com/package/dotenv), [Express](https://www.npmjs.com/package/express), [Express-Async-Handler](https://www.npmjs.com/package/express-async-handler),[Express-Handlebars](https://www.npmjs.com/package/express-handlebars), [Express-Session](https://www.npmjs.com/package/express-session), [Moment.js](https://www.npmjs.com/package/moment), [Mysql2](https://www.npmjs.com/package/mysql2), [Node-Fetch](https://www.npmjs.com/package/node-fetch), [Sequelize](https://www.npmjs.com/package/sequelize), and [Slick-Carousel](https://www.npmjs.com/package/slick-carousel) for node package modules.
- [Sports Data Io](https://sportsdata.io/developers/api-documentation/nba), a third party api was used to build Sports-Buzz. 
+This application uses [Json](https://www.npmjs.com/package/jsonwebtoken) web tokens for authentification, [Bcrypt](https://www.npmjs.com/package/bcrypt), [Bootstrap](https://www.npmjs.com/package/bootstrap), [GraphQl](https://www.npmjs.com/package/graphql), [Dotenv](https://www.npmjs.com/package/dotenv), [Express](https://www.npmjs.com/package/express), [Apollo Server Express](https://www.npmjs.com/package/apollo-server-express),[Mongoose](https://www.npmjs.com/package/mongoose), [React](https://www.npmjs.com/package/react), [React Router Dom](https://www.npmjs.com/package/react-router-dom), [Apollo Boost](https://www.npmjs.com/package/apollo-boost), [Apollo React Hooks](https://www.npmjs.com/package/@apollo/react-hooks), [GraphQL Tag](https://www.npmjs.com/package/graphql-tag), and [JWT Decode](https://www.npmjs.com/package/jwt-decode) for node package modules.
+ 
 
 # Screenshot  
 
 
-![Sports Buzz Screenshot](./public/assets/images/buzz.gif)
+![SneakerBay Screenshot](./client/public/img/readme2.png)
 
 
 
@@ -41,19 +39,19 @@ This application uses Json web tokens for authentification.
 For the latest and greatest sneakers, check out [SneakerBay](https://sneakerbay.herokuapp.com/).
 
 
-# Technology Stack
+<!-- # Technology Stack
  
 
 | Technology | Description                        |Links ↘️ |
 | ---------- | -----------------------------------| ------|
 |![GitHub top language](https://img.shields.io/github/languages/top/mrhumpherys/social-sports?color=yellow&label=JavaScript&message=54.9%&style=flat-square) | JavaScript |  [Node.js](https://nodejs.org/en/), [Express](https://www.npmjs.com/package/express), [Express-Session](https://www.npmjs.com/package/express-session), [Sequelize](https://www.npmjs.com/package/sequelize)                                               |
 |![Handlebars](https://img.shields.io/static/v1?label=Handlebars&message=21.6%&color=blue&style=flat-square)| Handle Bars |         |
-|![CSS](https://img.shields.io/static/v1?label=CSS&message=7.9%&color=blue&style=flat-square)| Cascading Style Sheets |[Bootstrap](https://www.npmjs.com/package/bootstrap), [Google Font](https://fonts.google.com/)                                   |
+|![CSS](https://img.shields.io/static/v1?label=CSS&message=7.9%&color=blue&style=flat-square)| Cascading Style Sheets |[Bootstrap](https://www.npmjs.com/package/bootstrap), [Google Font](https://fonts.google.com/)                                   | -->
 
 
 # Usage  
 
-When you visit [SneakerBay](https://sneakerbay.herokuapp.com/) you are presented with the current sneakers for sale. Before getting access to purchase sneakers you must signup, with you email, username, and password. After you signup you are taken to the dashboard and presented with information abou your user history, your sneakers for sale, and the sneakers you haev bought. To sell a sneaker click the sell shoe link. You will be presented with a form to provide information about the shoe. After successfully completing the form you can add another shoe or return to your dashboard. Check out the homepage for the latest shoes to buy. When you click a shoe you will be taken to a single shoe page and see more information regarding the shoe. IF you choose to buy the shoe you wil be asked to confirm. After confirming you will be connected to the seller via email where you can purchase the shoe. When you return to your dashboard the shoe you puchased is listed under your purchases. 
+When you visit [SneakerBay](https://sneakerbay.herokuapp.com/) you are presented with the current sneakers for sale. Before getting access to purchase sneakers you must signup, with you email, username, and password. After you signup you are taken to the dashboard and presented with information abou your user history, your sneakers for sale, and the sneakers you haev bought. To sell a sneaker click the sell shoe link. You will be presented with a form to provide information about the shoe. After successfully completing the form you can add another shoe or return to your dashboard. Check out the homepage for the latest shoes to buy. When you click a shoe you will be taken to a single shoe page and see more information regarding the shoe. If you choose to buy the shoe you wil be asked to confirm. After confirming you will be connected to the seller via email where you can purchase the shoe. When you return to your dashboard the shoe you puchased is listed under your purchases. 
 
 
 # Collaborators  

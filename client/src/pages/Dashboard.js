@@ -30,11 +30,11 @@ const Dashboard = () => {
    
         if(showAvatarList === 'hide') {
             setShowAvatarList('');
-            setButtonText('Hide Avatar')
+            setButtonText('Hide Avatars')
         }
         else {
             setShowAvatarList('hide');
-            setButtonText('Update Avatars');
+            setButtonText('Update Avatar');
         }
  
    }
