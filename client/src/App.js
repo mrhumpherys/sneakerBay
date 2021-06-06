@@ -10,7 +10,6 @@ import Signup from "./pages/Signup";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import SingleProduct from "./pages/Single-product";
-import SingleProductImage from "./pages/Single-product-image";
 import Search from "./pages/Search";
 import AddShoe from "./pages/Add-shoe";
 import NoMatch from "./pages/NoMatch";
@@ -43,7 +42,6 @@ function App() {
                 <Route exact path="/" component={Home} />
                 <Route exact path="/dashboard" component={Dashboard} />
                 <Route exact path="/single-product/:id" component={SingleProduct} />
-                <Route exact path="/single-product-image/:id" component={SingleProductImage} />
                 <Route exact path="/search" component={Search} />
                 <Route exact path="/add-shoe" component={AddShoe} />
                 <Route component={NoMatch} />

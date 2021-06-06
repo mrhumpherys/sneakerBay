@@ -118,9 +118,7 @@ h3.product-name a:hover {
   text-decoration: none;
   color: var(--marigold);
 }
-.product-image {
-  padding: 30px;
-}
+
 .search-results-area .product-image {
   padding: 0;
   height: 350px;
@@ -144,6 +142,10 @@ h3.product-name a:hover {
 .profile-sidebar li {
   padding: 10px 20px;
   border-bottom: 1px solid #e7e7e7;
+}
+.product-box {
+  padding: 30px;
+  background: #fff;
 }
 li.section-header {
   background: var(--black);
@@ -175,10 +177,6 @@ a.btn:hover {
 
 }
 li.product-title {
-  color: var(--marigold);
-  background: var(--black);
-  padding: 20px;
-  border-radius: 6px 6px 0 0;
   text-transform: capitalize;
 }
 
@@ -209,7 +207,7 @@ li.before {
   margin-bottom: 10px;
 }
 .details-container {
-  padding: 30px;
+  padding: 0 20px 20px 20px;
   background: #fff;
   position: relative;
   overflow: hidden;
@@ -217,7 +215,6 @@ li.before {
 .img-large-container {
   position: relative;
   overflow: hidden;
-  padding-right: 100px;
 }
 .side-content {
   background: #fff;
@@ -263,15 +260,25 @@ li.before {
   opacity: 0;
 }
 .avatar {
-
   padding: 5px;
   cursor: pointer;
+  transition: all ease .3s;
 }
-
+.avatar label {
+  cursor: pointer;
+}
+.avatar:hover {
+  -moz-box-shadow:    inset 0 0 3px var(--marigold);
+   -webkit-box-shadow: inset 0 0 3px var(--marigold);
+   box-shadow:         inset 0 0 3px var(--marigold);
+   background: #e7e7e7;
+}
 .avatar img{
   height: auto;
 }
-
+footer .container {
+  padding-top: 60px;
+}
 /* ============================ Modals START ===================================== */
 /* ======================================================================= */
 .modalBackdrop {
