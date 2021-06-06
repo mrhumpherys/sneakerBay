@@ -31,6 +31,7 @@ export const QUERY_ME = gql`
       sold
       username
       createdAt
+      image
     }
     bought {
       _id

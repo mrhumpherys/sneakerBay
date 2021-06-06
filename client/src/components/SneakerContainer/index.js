@@ -54,7 +54,7 @@ function SneakerContainer({ toSell }) {
                     <div className="product-container mb-4">
                     {shoe.sold && <div className="corner-ribbon">SOLD</div>}
                         <div className="product-image">
-                            <Link to={`/single-product/${shoe._id}`}><img src="./img/sneakers.svg" className="img-fluid" alt="" /></Link>
+                            <Link to={`/single-product/${shoe._id}`}><img src={shoe.image} className="img-fluid" alt="" /></Link>
                         </div>
                         <div className="product-detail mt-3 px-4">
                             <h3 className="product-name"><Link to={`/single-product/${shoe._id}`}>{shoe.name}</Link></h3>

@@ -57,9 +57,7 @@ nav {
   transform: skewX(15deg);
 }
 
-main {
-  padding-bottom: 100px;
-}
+
 .hero {
   min-height: 500px;
   background: #d2d2d2 url("./img/hero-bg-2.jpg") no-repeat center right;
@@ -122,6 +120,11 @@ h3.product-name a:hover {
 }
 .product-image {
   padding: 30px;
+}
+.search-results-area .product-image {
+  padding: 0;
+  height: 350px;
+  overflow: hidden;
 }
 .product-detail a {
   text-decoration: none;

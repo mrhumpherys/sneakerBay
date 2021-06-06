@@ -36,9 +36,9 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <Navbar />
-        <div>
+
           {Auth.loggedIn() ? (
-            <>
+
               <Switch>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/dashboard" component={Dashboard} />
@@ -48,19 +48,19 @@ function App() {
                 <Route exact path="/add-shoe" component={AddShoe} />
                 <Route component={NoMatch} />
               </Switch>
-            </>
+
           ) : (
-            <>
+
               <Switch>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/signup" component={Signup} />
                 <Route component={NoMatch} />
               </Switch>
-            </>
+
           )}
           <Footer />
-        </div>
+
       </Router>
     </ApolloProvider>
   );
